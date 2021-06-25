@@ -1,0 +1,114 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+}
+
+.main_nav {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  font-size: 0.7em;
+  box-shadow: 2px 0px 2px rgb(155, 154, 154);
+  padding-top: 20px;
+  padding-left: 40px;
+  opacity: 1;
+  z-index: 10;
+}
+.main_nav a {
+  transform: translate(0px, 0px);
+  text-shadow: 0px 0px 1px rgb(255, 255, 255);
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transition: all ease-in-out 0.2s;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+}
+.link {
+  padding: 20px;
+}
+
+.push {
+  margin-left: auto;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 100%;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  color: rgb(0, 0, 0);
+}
+.log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+    .active::after {
+      margin: auto;
+      width: 100px;
+      text-align: center;
+      background-color: #e67e22;
+      content: " ";
+      border: 1px solid #e67e22;
+      margin-top: 20px;
+    }
+    */
+
+.activel {
+  justify-content: center;
+  align-items: center;
+  color: #000000d5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 100%;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+}
+.vax {
+  color: #0084ffd5;
+  text-transform: none;
+  font-size: 90%;
+}
+.logo {
+  height: 70px;
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+}
+
+.name {
+  margin-right: 60px;
+  font-size: 25px;
+}
+
+.main_nav a:hover {
+  transform: translate(0px, 1px);
+  color: #0084fffb;
+  text-shadow: 0px 0px 1px rgb(110, 110, 110);
+  -webkit-transform: translate(0px, 1px);
+  -moz-transform: translate(0px, 1px);
+  -ms-transform: translate(0px, 1px);
+  -o-transform: translate(0px, 1px);
+}
+
+.main_nav .log:hover .name {
+  color: #0084ffd5;
+}
+.main_nav .log:hover .vax {
+  color: #000000d5;
+}

@@ -1,0 +1,119 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+}
+
+.main_nav {
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  font-size: 0.7em;
+  box-shadow: 2px 0px 2px rgb(155, 154, 154);
+  padding-top: 20px;
+  padding-left: 40px;
+}
+.main_nav a {
+  transform: translate(0px, 0px);
+  text-shadow: 0px 0px 1px rgb(255, 255, 255);
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transition: all ease-in-out 0.2s;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+}
+.link {
+  padding: 20px;
+}
+
+.push {
+  margin-left: auto;
+}
+
+.tag,
+.log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 251, 251);
+  text-decoration: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 100%;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  color: white;
+}
+/*
+  .active::after {
+    margin: auto;
+    width: 100px;
+    text-align: center;
+    background-color: #e67e22;
+    content: " ";
+    border: 1px solid #e67e22;
+    margin-top: 20px;
+  }
+  */
+
+.activel {
+  justify-content: center;
+  align-items: center;
+  color: #ffffffd5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 100%;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+}
+.vax {
+  color: #0084ffd5;
+  text-transform: none;
+  font-size: 90%;
+}
+.logo {
+  height: 70px;
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+}
+
+.name {
+  margin-right: 60px;
+  font-size: 25px;
+}
+
+.main_nav a:hover {
+  transform: translate(0px, 1px);
+  color: #0084fffb;
+  text-shadow: 0px 0px 1px rgb(110, 110, 110);
+  -webkit-transform: translate(0px, 1px);
+  -moz-transform: translate(0px, 1px);
+  -ms-transform: translate(0px, 1px);
+  -o-transform: translate(0px, 1px);
+}
+
+.main_nav .log:hover .name {
+  color: #0084ffd5;
+  transform: translateY(-1px);
+  -webkit-transform: translateY(-1px);
+  -moz-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  -o-transform: translateY(-1px);
+}
+
+/* active_tab_styling */
+
+.main_nav a:hover,
+.main_nav a:active,
+.main_nav a.active {
+  color: #0084ffd5;
+}
