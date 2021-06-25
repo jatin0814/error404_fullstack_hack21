@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  .admincss1 {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.3) 80%
+      ),
+      url("../../images/coveradm.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .tag {
+    position: absolute;
+    top: 35vh;
+    left: 5vw;
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 200%;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+  }
+  .tag2 {
+    padding-left: 20px;
+    font-size: 95%;
+    color: #a0b9ff;
+  }
+  
+  .btns {
+    position: absolute;
+    top: 55vh;
+    left: 10vw;
+    display: inline;
+    width: 50%;
+  }
+  .add_button2,
+  .add_button3 {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #0084ff;
+    width: 25%;
+    margin: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 20px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    text-align: center;
+    min-width: 180px;
+    transition: all ease 0.2s;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+    -ms-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+  }
+  
+  .add_button3 {
+    background-color: rgba(0, 0, 0, 0.5);
+  
+    color: #459df1;
+    border: 1.5px solid #459df1;
+  }
+  .add_button2:hover {
+    background-color: #036aca;
+  }
+  
+  .add_button3:hover {
+    background-color: #036dd1;
+    color: white;
+    border: 1.5px solid #036dd1;
+  }
+  
+  .infor {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    width: 98vw;
+    justify-content: space-around;
+  }
+  .informa {
+    cursor: pointer;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    height: 120px;
+    width: 120px;
+    border: 3px solid rgb(0, 0, 0);
+    border-top: 0px none;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    font-size: 220%;
+    padding-top: 30px;
+    position: relative;
+    font-weight: 500;
+  }
+  .icon2 {
+    font-weight: 500;
+    position: absolute;
+    top: -15%;
+    left: 34%;
+    font-size: 100%;
+  }
+  
+  .informa div {
+    margin-top: 50px;
+    font-size: 45%;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .informa:hover {
+    border: 3px solid white;
+    border-top: 0 none;
+    background-color: rgba(0, 0, 0, 0.603);
+    color: white;
+  }
+  
