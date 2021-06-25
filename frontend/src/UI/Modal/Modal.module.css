@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+  }
+  .modal {
+    z-index: 500;
+    position: fixed;
+    left: 30%;
+    top: 20%;
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.5s ease-out;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 600px) {
+    .modal {
+      width: 80%;
+      left: 10%;
+    }
+  }
+  
