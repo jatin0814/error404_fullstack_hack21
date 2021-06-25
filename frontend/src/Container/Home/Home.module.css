@@ -6,6 +6,7 @@
 body {
   background-color: rgb(238, 238, 238);
   position: relative;
+  overflow-x: hidden;
 }
 
 .parallax {
@@ -214,7 +215,7 @@ body {
 }
 
 .inst {
-  background-color: #459df1;
+  background-color: #50a8fc;
   color: white;
   padding: 10px;
   font-size: 25px;
@@ -229,10 +230,10 @@ body {
 }
 
 .userCheck {
-    position: relative;
-    left: 8px;
-    top: 2px;
-    font-size: 17px;
+  position: relative;
+  left: 8px;
+  top: 2px;
+  font-size: 17px;
 }
 
 .inputs {
@@ -247,13 +248,11 @@ body {
   border: none;
 }
 
-.input:focus{
+.input:focus {
   border-bottom: 2px solid #459df1;
 }
 
-
-.radioBtn{
-
+.radioBtn {
   margin: 15px 10px;
   /* padding: 10px; */
 }
@@ -269,7 +268,7 @@ body {
   transition: background-color 0.25s ease-in;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: rgb(23, 107, 175);
 }
 

@@ -1,33 +1,583 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.back {
+  overflow-x: hidden;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 10%,
+      rgba(0, 0, 0, 0.2) 40%
+    ),
+    url("../../../images/cover.jpg") no-repeat center center fixed;
+  height: 100vh;
+  /* Center and scale the image nicely */
+  background-size: cover;
+  min-height: 690px;
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  text-align: center;
+  background-color: rgba(255, 56, 30, 1);
+  color: white;
+  padding: 7px;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 20px;
+}
+
+.logo {
+  height: 140px;
+  padding-right: 0px;
+  padding: 5px;
+  margin-left: 30px;
+}
+
+.mobi {
+  font-weight: bold;
+  color: #459df1;
+  font-size: 115%;
+}
+
+.name {
+  color: white;
+  margin-right: auto;
+  font-size: 30px;
+}
+
+.admin {
+  margin-left: auto;
+  margin-right: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: rgba(116, 113, 113, 0.466);
+  text-decoration: none;
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  content: "login";
+}
+
+.admin:hover {
+  color: rgb(0, 0, 0);
+  background-color: #d6d8da;
+}
+
+.signup {
+  text-align: center;
+}
+
+form {
+  font-size: 0;
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid rgb(0, 132, 255);
+  text-align: left;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  outline: none;
+}
+.input::placeholder {
+  color: rgb(207, 207, 207);
+  letter-spacing: 2px;
+}
+.input:focus {
+  caret-color: #0268c9;
+  color: #d8d5d5;
+  letter-spacing: 2px;
+}
+.input:focus::placeholder {
+  color: rgb(146, 145, 145);
+}
+.email {
+  border-bottom: 0.5px solid rgb(224, 224, 224);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.pass {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.namee {
+  width: 300px;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.eye {
+  width: max-content;
+  margin: auto;
+  color: rgb(206, 206, 206);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.button {
+  letter-spacing: 1px;
+  background-color: #138cfd;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 10px;
+  width: 300px;
+  color: white;
+  font-size: 20px;
+  margin-top: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #0174e0;
+  color: rgb(240, 240, 240);
+}
+
+.button2 {
+  letter-spacing: 1px;
+  background-color: rgb(14 14 14 / 80%);
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 10px;
+  width: 300px;
+  color: white;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: none;
+  margin-bottom: 40px;
+}
+
+.button2:hover {
+  color: rgb(0, 0, 0);
+  background-color: #d6d8da;
+}
+
+.welcome {
+  margin-top: 30px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.text {
+  width: 300px;
+  margin: auto;
+  color: rgb(228, 228, 228);
+  padding: 50px 0px 20px;
+}
+/*features*/
+
+.feat_cont {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 15vh 0px 0px 0px;
+  justify-content: center;
+}
+
+.feature1,
+.feature2,
+.feature3 {
+  display: inline-block;
+  background-color: rgba(128, 128, 128, 0.349);
+  border-radius: 50px;
+  color: white;
+  margin: auto 9vw;
+  min-width: 220px;
+}
+
+.feature1:hover,
+.feature2:hover,
+.feature3:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.884);
+  font-weight: 500;
+}
+.feature1:hover .icon,
+.feature2:hover .icon,
+.feature3:hover .icon {
+  background-color: rgba(145, 145, 145, 0.568);
+  color: #000000;
+}
+.cont1,
+.cont2,
+.cont3 {
+  padding: 18px 8px;
+  min-width: 230px;
+}
+
+.icon {
+  display: inline;
+  background-color: rgba(255, 248, 248, 0.199);
+  padding: 7px 14px;
+  border-radius: 100px;
+  font-size: 25px;
+}
+
+.feat_txt {
+  display: inline;
+  padding: 20px 20px;
+  font-size: 20px;
+  position: relative;
+  right: 2%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 100%;
+}
+/* modal */
+
+.verify {
+  text-align: right;
+  position: relative;
+  left: 70%;
+}
+
+.header {
+  width: 80%;
+  height: 70px;
+  background-color: #459df1;
+  margin: auto;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* background-image: url('../../../images/orange.png'); */
+}
+
+.env {
+  font-size: 40px;
+  color: white;
+}
+
+.otp_head {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px auto;
+  color: #0084ff;
+}
+
+.sent {
+  color: rgb(73, 73, 73);
+  margin-top: 20px;
+}
+
+.no {
+  color: rgb(73, 73, 73);
+}
+
+.otp_input {
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin: 40px auto;
+  font-size: 25px;
+}
+
+.verify_button {
+  background-color: #459df1;
+  color: white;
+  width: max-content;
+  margin: auto;
+  font-size: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.verify_button:hover {
+  background-color: #0084ff;
+}
+/*media Queries*/
+@media only screen and (min-width: 0px) {
+  * {
+    font-size: 14px;
+  }
+  .back {
+    overflow-y: hidden;
+  }
+  .welcome {
+    padding-top: 20px;
+  }
+  .text {
+    padding-top: 20px;
+  }
+  .feat_cont {
+    margin-top: 5vh;
+  }
+  .logo {
+    max-width: 120px;
+  }
+  .nav {
+    top: 10px;
+  }
+  .welcome,
+  .txt {
+    line-height: 1px;
+  }
+  .button2 {
+    display: block;
+  }
+  .logo {
+    flex: 50%;
+    max-width: 200px;
+    min-width: 150px;
+    margin-left: 10vw;
+  }
+  .name {
+    flex: 50%;
+  }
+  .admin {
+    margin-left: auto;
+    margin-right: 20px;
+    font-weight: 400;
+    padding: 10px 10px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+  }
+  .feat_cont {
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+  .feature1,
+  .feature2,
+  .feature3 {
+    margin-left: 4.5vw;
+    min-width: 130px;
+    margin-bottom: 10px;
+  }
+
+  .cont1,
+  .cont2,
+  .cont3 {
+    padding: 12px 4px;
+    min-width: 150px;
+  }
+  .feature1,
+  .feature3 {
+    min-width: 140px;
+  }
+
+  .icon {
     font-size: 18px;
   }
-  
-  .back {
-    overflow-y: auto;
-    overflow-x: hidden;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.8) 10%,
-        rgba(0, 0, 0, 0.2) 40%
-      ),
-      url("../../../Images/cover.jpg") no-repeat center center fixed;
-    height: 100vh;
-    /* Center and scale the image nicely */
-    background-size: cover;
-    min-height: 720px;
+  .feat_txt {
+    padding: 15px 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 92%;
   }
-  
-  
-  .mobi {
-    font-weight: bold;
-    color: #459df1;
-    font-size: 115%;
+  .admin {
+    display: none;
   }
-  
+}
+@media only screen and (min-width: 510px) {
+  * {
+    font-size: 16px;
+  }
+  .welcome {
+    padding-top: 30px;
+  }
+  .text {
+    padding-top: 50px;
+  }
+
+  .logo {
+    flex: 33%;
+    max-width: 200px;
+    margin-left: 20px;
+  }
   .name {
-    color: white;
-    margin-right: auto;
-    font-size: 30px;
+    flex: 33%;
   }
-  
+  .button2 {
+    display: none;
+  }
+  .admin {
+    display: block;
+  }
+  .admin {
+    margin-left: auto;
+    margin-right: 20px;
+    font-weight: 400;
+    padding: 10px 10px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+  }
+  .feat_cont {
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+  .feature1,
+  .feature2,
+  .feature3 {
+    margin-left: 4.5vw;
+    min-width: 130px;
+    margin-bottom: 10px;
+  }
+
+  .cont1,
+  .cont2,
+  .cont3 {
+    padding: 12px 4px;
+    min-width: 150px;
+  }
+  .feature1,
+  .feature3 {
+    min-width: 140px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+  .feat_txt {
+    padding: 15px 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 92%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  * {
+    font-size: 16px;
+  }
+  .feat_cont {
+    margin-top: 10vh;
+  }
+  .feat_cont {
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+  }
+  .feature1,
+  .feature2,
+  .feature3 {
+    margin-left: 4.5vw;
+    min-width: 160px;
+  }
+
+  .cont1,
+  .cont2,
+  .cont3 {
+    padding: 12px 4px;
+    min-width: 170px;
+  }
+  .feature1,
+  .feature3 {
+    min-width: 150px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+  .feat_txt {
+    position: relative;
+    right: 0%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: 92%;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  * {
+    font-size: 18px;
+  }
+  .feat_cont {
+    grid-template-columns: 32% 32% 32%;
+    justify-content: space-around;
+  }
+  .feature1,
+  .feature2,
+  .feature3 {
+    margin-left: 4.5vw;
+    min-width: 200px;
+  }
+
+  .cont1,
+  .cont2,
+  .cont3 {
+    padding: 12px 4px;
+    min-width: 200px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+  .feat_txt {
+    position: relative;
+    right: 1%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 92%;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .feature {
+    min-width: 210px;
+  }
+
+  .cont1,
+  .cont2,
+  .cont3 {
+    padding: 16px 4px;
+    min-width: 210px;
+  }
+
+  .icon {
+    font-size: 22px;
+  }
+  .feat_txt {
+    font-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .feat_cont {
+    width: 100vw;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+  }
+  .feature1,
+  .feature2,
+  .feature3 {
+    margin-left: 9vw;
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+}

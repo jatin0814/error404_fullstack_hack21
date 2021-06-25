@@ -85,9 +85,11 @@ class Admin extends Component {
             </div>
 
             <br></br>
-            <button className={styles.button} onClick={this.onSubmitHandler}>
-              Sign in
-            </button>
+            <div className={styles.absclass}>
+              <button className={styles.button} onClick={this.onSubmitHandler}>
+                Sign in
+              </button>
+            </div>
           </div>
         </Modal>
       </div>
@@ -95,7 +97,19 @@ class Admin extends Component {
   }
 }
 
+// const mapStateToProps = state => {
+//     return{
+//         verify: state.verify ,
+//         isAuth: state.auth,
+//         error: state.error
+//     }
+// }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuth: (no, staff) => dispatch(actions.auth(no, staff)),
+    onVerify: (no, otp) => dispatch(actions.verify(no, otp)),
+  };
+};
 
-
-export default Admin;
+export default connect(null, mapDispatchToProps)(Admin);
