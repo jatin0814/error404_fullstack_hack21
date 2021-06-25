@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import styles from "./Public.module.css";
-import logo from "../../../images/logo.png";
+import logo from "../../../Images/logo.png";
 import Admin from "../Admin/Admin";
 import Verify from "../../../UI/Modal/Modal";
 import * as actions from "../../../Store/actions/auth";

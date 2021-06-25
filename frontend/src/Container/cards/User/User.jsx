@@ -26,6 +26,11 @@ class Patient extends Component {
 
     return (
       <div className={styles.box}>
+
+        {/* plis ad these */}
+        <div>date/time of vaccination</div>
+        <div>vaccine given</div>
+        
         <button className={styles.buttond1}>{this.props.vaccinated ? "Vaccinated" : "Not Vaccinated"}</button>
         <button className={styles.cross}>
           <div key={this.props.id} id={this.props.id} onClick={this.onDeleteHandler}>

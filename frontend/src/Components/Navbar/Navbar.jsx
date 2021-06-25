@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
-import Logo from "../../images/logo.png";
+import Logo from "../../Images/logo.png";
 
 class Navbar extends Component {
   render() {

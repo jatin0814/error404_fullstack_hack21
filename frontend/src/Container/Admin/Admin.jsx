@@ -1,16 +1,57 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import styles from "./Admin.module.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import Patient from "../Cards/Patient/Patient";
+import Patient from '../cards/Patient/Patient';
 import { BiPlusMedical } from "react-icons/bi";
 import { BiGroup } from "react-icons/bi";
 import { BiHandicap } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
 
 class Admin extends Component {
+
+  state={
+    patients: []
+  }
+
+  componentDidMount() {
+
+    axios
+      .get("http://localhost:9000/patient/get-allpatients")
+      .then((res) => {
+        this.setState({patients: res.data.patients})
+        console.log(this.state.patients);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+
   render() {
+
+    // this.state.patients.map((patient) => (
+    //   console.log("function")
+    // ))
+
+    let patients = (
+      <div>
+        {this.state.patients.map((patient) => (
+          <Patient
+            key={patient._id}
+            id={patient._id}
+            dose={patient.dose}
+            name={patient.name}
+            gender={patient.gender}
+            special={patient.special}
+            otp={patient.otp}
+          />
+        ))}
+      </div>
+    );
+
+
     return (
       <div className={styles.admincss}>
         <div className={styles.admincss1}>
@@ -58,7 +99,11 @@ class Admin extends Component {
         </div>
         <Navbar admin={true} />
 
-        <Patient
+        <div>
+          {patients}
+        </div>
+
+        {/* <Patient
           name="sidharth saini"
           age="21"
           gender="male"
@@ -80,6 +125,13 @@ class Admin extends Component {
         />
 
         <Patient
+          name="sidharth saini"
+          age="21"
+          gender="male"
+          aadhar="123456789"
+        /> */}
+
+<Patient
           name="sidharth saini"
           age="21"
           gender="male"

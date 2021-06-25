@@ -1,34 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { connect } from 'react-redux';
+import { Redirect } from "react-router-dom";
+
 
 import styles from "./Admin.module.css";
 import Modal from "../../../UI/Modal/Modal";
 import * as actions from "../../../Store/actions/auth";
-// import * as actions from '../../../store/actions/auth'
 // import Spinner from "../../../UI/Spinner/Spinner"
 
 class Admin extends Component {
   state = {
-    user: "",
+    username: "",
     password: "",
     showpass: false,
   };
 
   onUserChange = (event) => {
-    this.setState({ user: event.target.value });
+    this.setState({ username: event.target.value });
+    console.log(this.state.username)
   };
 
   onPassChange = (event) => {
     this.setState({ password: event.target.value });
+    console.log(this.state.password)
   };
 
   onSubmitHandler = () => {
     this.props.onAuth(
-      this.state.name,
-      this.state.email,
-      this.state.password,
-      false
+      this.state.username,
+      this.state.password
     );
   };
 
@@ -37,8 +37,15 @@ class Admin extends Component {
   };
 
   render() {
+
+    const redirect = this.props.isAuth ? <Redirect to="/admin" /> : null;
+
     return (
+
       <div>
+
+    {redirect}
+
         <Modal show={this.props.show} switch={this.props.switch}>
           <div className={styles.cont}>
             <div className={styles.header}>
@@ -57,7 +64,7 @@ class Admin extends Component {
                 type="text"
                 className={styles.txt}
                 placeholder="username"
-                onChange={this.onEmailChange}
+                onChange={this.onUserChange}
               ></input>
             </div>
             <br></br>
@@ -97,19 +104,18 @@ class Admin extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//     return{
-//         verify: state.verify ,
-//         isAuth: state.auth,
-//         error: state.error
-//     }
-// }
+const mapStateToProps = state => {
+    return{
+        isAuth: state.adminAuth,
+        error: state.error
+    }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAuth: (no, staff) => dispatch(actions.auth(no, staff)),
-    onVerify: (no, otp) => dispatch(actions.verify(no, otp)),
+    onAuth: (userName, password) => dispatch(actions.adminAuth(userName, password)),
+  
   };
 };
 
-export default connect(null, mapDispatchToProps)(Admin);
+export default connect(mapStateToProps, mapDispatchToProps)(Admin);

@@ -10,7 +10,7 @@
       rgba(0, 0, 0, 0.8) 10%,
       rgba(0, 0, 0, 0.2) 40%
     ),
-    url("../../../images/cover.jpg") no-repeat center center fixed;
+    url("../../../Images/cover.jpg") no-repeat center center fixed;
   height: 100vh;
   /* Center and scale the image nicely */
   background-size: cover;

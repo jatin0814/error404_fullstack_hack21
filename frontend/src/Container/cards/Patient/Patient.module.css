@@ -11,7 +11,7 @@
   width: 80%;
   margin: 50px 10%;
   background-color: white;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-left: 5px solid #50a8fc;
   padding: 25px 20px;
   border-radius: 15px;
@@ -21,7 +21,7 @@
   -o-border-radius: 15px;
   position: relative;
   font-size: 120%;
-  box-shadow: 2px 2px 6px rgb(80, 80, 80);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
 .buttond1,
@@ -29,7 +29,7 @@
   position: absolute;
   top: -15px;
   /*background-color: #4cc94c;*/
-  background-color: rgb(235, 167, 42);
+  background-color: rgb(255, 210, 125);
   color: rgb(0, 0, 0);
   width: 18%;
   min-width: 200px;
@@ -40,7 +40,7 @@
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  border: 1px solid #25a025;
+  border: 1px solid rgb(255, 166, 0);
   letter-spacing: 1px;
   word-spacing: 0;
   text-transform: capitalize;
@@ -97,7 +97,7 @@
 }
 
 .flexp3 {
-  border-top: 2px solid rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;

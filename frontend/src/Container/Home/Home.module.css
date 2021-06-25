@@ -17,7 +17,7 @@ body {
       rgba(0, 0, 0, 0.8) 15%,
       rgba(0, 0, 0, 0.2) 60%
     ),
-    url("../../images/home_cover.jpg");
+    url("../../Images/home_cover.jpg");
   /*pussh*/
   /* Set a specific height */
   min-height: 100vh;

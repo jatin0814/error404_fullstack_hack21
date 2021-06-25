@@ -11,7 +11,7 @@
       rgba(255, 255, 255, 0) 50%,
       rgba(255, 255, 255, 0.3) 80%
     ),
-    url("../../images/coveradm.jpg");
+    url("../../Images/coveradm.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center;
