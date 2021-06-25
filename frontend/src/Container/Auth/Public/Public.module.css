@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+  
+  .back {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 10%,
+        rgba(0, 0, 0, 0.2) 40%
+      ),
+      url("../../../Images/cover.jpg") no-repeat center center fixed;
+    height: 100vh;
+    /* Center and scale the image nicely */
+    background-size: cover;
+    min-height: 720px;
+  }
+  
+  
+  .mobi {
+    font-weight: bold;
+    color: #459df1;
+    font-size: 115%;
+  }
+  
+  .name {
+    color: white;
+    margin-right: auto;
+    font-size: 30px;
+  }
+  
