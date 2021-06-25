@@ -5,17 +5,29 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
+import {Provider} from 'react-redux';
+import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import { BrowserRouter} from 'react-router-dom'
+import thunk from 'redux-thunk'
+
+import authReducer from './Store/reducers/auth';
+
+// const rootReducer = combineReducers({
+//   auth: authReducer,
+//   user: userReducer
+// })
 
 const store = createStore(authReducer, compose(
   applyMiddleware(thunk)
 ));
 
 const app = (
-
+  <Provider store={store}>
       <BrowserRouter>
           <App/>
       </BrowserRouter>
+  </Provider>
+  
 );
 
 
