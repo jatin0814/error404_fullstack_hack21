@@ -105,11 +105,7 @@ body {
   display: flex;
   width: 80vw;
   justify-content: space-around;
-<<<<<<< HEAD
-  color: rgb(255, 255, 255);
-=======
   /* background: red; */
->>>>>>> caea46ce6da51728f9e306ccc0355528c5b5309d
 }
 .informa {
   display: block;
