@@ -96,11 +96,13 @@ body {
 }
 
 .infor {
-  position: absolute;
-  top: 18vh;
+  position: relative;
+  top: 12vh;
+  /* top: 18px; */
   display: flex;
   width: 80vw;
   justify-content: space-around;
+  /* background: red; */
 }
 .informa {
   display: block;
@@ -263,16 +265,14 @@ body {
   border-bottom: 2px solid #459df1;
 }
 
-.radioBtn {
-  margin: 15px 10px;
-  /* padding: 10px; */
-}
 
 .submit {
   background-color: #459df1;
   padding: 10px;
   width: max-content;
-  margin-left: auto;
+  /* margin-left: auto; */
+  margin: 0 auto;
+  margin-top: 17px;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -286,3 +286,23 @@ body {
 .none {
   display: none;
 }
+
+.inputText{
+  /* color:red; */
+  position: relative;
+  top: -3px;
+  
+}
+
+.radioBtn {
+  margin: 15px 10px;
+  /* padding: 10px; */
+  cursor: pointer;
+
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+    
+}
+

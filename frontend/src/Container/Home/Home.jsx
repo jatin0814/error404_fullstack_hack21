@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-
 import styles from "./Home.module.css";
 import AddMember from "../../UI/Modal/Modal";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -13,6 +12,9 @@ import { BiGroup } from "react-icons/bi";
 import { BiHandicap } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
 import { FaUserCheck } from "react-icons/fa";
+// import LightSpeed from 'react-reveal/LightSpeed';
+import Bounce from 'react-reveal/Bounce';
+import Fade from 'react-reveal/Fade';
 
 class Home extends Component {
   state = {
@@ -137,7 +139,11 @@ class Home extends Component {
 
     return (
       <div>
-        <Navbar />
+        {/* <LightSpeed left> */}
+          <div>
+            <Navbar />
+          </div>
+        {/* </LightSpeed> */}
 
         <AddMember show={this.state.modal} switch={this.modalSwitchhandler}>
           <div className={styles.addMem}>
@@ -176,7 +182,8 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.male}
               />
-              <label for="male">male</label>
+              
+              <label for="male" className={styles.inputText}>male</label>
               <br />
               <input
                 type="radio"
@@ -186,7 +193,7 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.female}
               />
-              <label for="female">female</label>
+              <label for="female" className={styles.inputText}>female</label>
               <br />
               <input
                 type="radio"
@@ -196,7 +203,7 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.other}
               />
-              <label for="other">other</label>
+              <label for="other" className={styles.inputText}>other</label>
               <br />
 
               <br />
@@ -217,6 +224,8 @@ class Home extends Component {
               />
               <label for="location"> Use my current location</label>
 
+              <br />
+              <br />
               <input
                 type="checkbox"
                 id="special"
@@ -224,7 +233,7 @@ class Home extends Component {
                 value="special"
                 onClick={this.special}
               />
-              <label for="special">Specially abled</label>
+              <label for="special">  Specially abled</label>
             </div>
 
             <div className={styles.submit} onClick={this.onAddMemberhandler}>
@@ -234,10 +243,12 @@ class Home extends Component {
         </AddMember>
 
         <div className={styles.parallax}>
+        <Fade top>
           <div className={styles.tag}>
             Get your whole family vaccinated here{" "}
             <div className={styles.tag2}># at home!</div>
           </div>
+          </Fade>
           <div className={styles.btns}>
             <div
               className={styles.add_button2}
@@ -253,6 +264,8 @@ class Home extends Component {
               {/*<FiHelpCircle />*/}
             </div>
 
+        <Fade left>
+          <div>
             <div className={styles.infor}>
               <div className={styles.reg} className={styles.informa}>
                 <BiNotepad className={styles.icon2} />
@@ -275,6 +288,9 @@ class Home extends Component {
                 <div>Special</div>
               </div>
             </div>
+            
+            </div>
+            </Fade>
           </div>
         </div>
         {/*<Navbarb />*/}
