@@ -31,6 +31,11 @@ class Home extends Component {
   };
 
   componentDidMount() {
+
+    var today = new Date();
+
+    console.log(today);
+
     navigator.geolocation.getCurrentPosition((position) => {
       this.setState({ lat: position.coords.latitude });
       this.setState({ long: position.coords.longitude });
@@ -39,6 +44,7 @@ class Home extends Component {
     const data = {
       phone: localStorage.getItem("phone"),
     };
+    
 
     axios
       .post("http://localhost:9000/user/members", data)
@@ -132,6 +138,7 @@ class Home extends Component {
             special={member.special}
             otp={member.otp}
             vaccinated={member.vaccinated}
+            van={member.vanNumber}
           />
         ))}
       </div>

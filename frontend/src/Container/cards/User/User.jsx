@@ -21,6 +21,25 @@ class Patient extends Component {
       });
   };
 
+  onScheduleHandler = (ev) => {
+    console.log(this.props.van)
+    console.log(ev.target.id)
+    console.log('reached')
+
+    const data = {
+      vanNumber: this.props.van,
+      patientId: ev.target.id
+    }
+
+    axios.post("http://localhost:9000/patient/schedulePatient", data)
+    .then((res) => {
+      console.log(res)
+    })
+    .then((err) => {
+      console.log(err)
+    })
+  }
+
   render() {
     return (
       <div className={styles.box}>
@@ -64,7 +83,7 @@ class Patient extends Component {
         </div>
         <div className={styles.flexp3}>
           <div className={styles.sch}>Dose {this.props.dose}</div>
-          <button className={styles.buttons}>Sechdule</button>
+          <button className={styles.buttons}  key={this.props.id} id={this.props.id} onClick={this.onScheduleHandler}>Schedule</button>
         </div>
       </div>
     );
