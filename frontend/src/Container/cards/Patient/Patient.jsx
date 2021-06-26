@@ -34,63 +34,62 @@ class Patient extends Component {
   render() {
     return (
       <div>
-      {this.props.vaccinated ? null :
+        {this.props.vaccinated ? null : (
+          <div className={styles.box}>
+            <div>
+              <div className={styles.flexclass}>
+                <div className={styles.name}>{this.props.name}</div>
+                <div className={styles.age}>{this.props.age}</div>
+                <div className={styles.gender}>{this.props.gender}</div>
+              </div>
+              <div className={styles.flexclass}>
+                <div className={styles.aadhar}>{this.props.aadhar}</div>
+              </div>
+              {/*<div className={styles.address}>Address</div> */}
+              <input
+                name="vaccine"
+                type="radio"
+                id="covaxine"
+                value="covaxine"
+                onClick={this.onVaccineChangeHandler}
+              />
+                <label for="covaxine">covaxine</label> {" "}
+              <input
+                name="vaccine"
+                type="radio"
+                id="covishield"
+                value="covishield"
+                onClick={this.onVaccineChangeHandler}
+              />
+                <label for="covishield">covishield</label>
+            </div>
 
-        <div className={styles.box}>
-        <div>
-          <div className={styles.name}>{this.props.name}</div>
-          <div className={styles.age}>{this.props.age}</div>
-          <div className={styles.gender}>{this.props.gender}</div>
-          <div className={styles.aadhar}>{this.props.aadhar}</div>
-          <div className={styles.address}>Address</div>
-          <input
-            name="vaccine"
-            type="radio"
-            id="covaxine"
-            value="covaxine"
-            onClick={this.onVaccineChangeHandler}
-          />
-            <label for="covaxine">covaxine</label>
-           {" "}
-          <input
-            name="vaccine"
-            type="radio"
-            id="covishield"
-            value="covishield"
-            onClick={this.onVaccineChangeHandler}
-          />
-            <label for="covishield">covishield</label>
-        </div>
+            <div className={styles.flexp}>
+              <div className={styles.flex2}>
+                Secret OTP: <div className={styles.otp}>5020</div>
+              </div>
+              <div className={styles.flex2}>
+                Category:{" "}
+                <div className={styles.sp}>
+                  {this.props.special ? "specialy abled" : "none"}
+                </div>
+              </div>
+            </div>
 
-        <div className={styles.flexp}>
-          <div className={styles.flex2}>
-            Secret OTP: <div className={styles.otp}>5020</div>
-          </div>
-          <div className={styles.flex2}>
-            Category:{" "}
-            <div className={styles.sp}>
-              {this.props.special ? "specialy abled" : "none"}
+            <div className={styles.flexp3}>
+              <div className={styles.sch}>Dose {this.props.dose}</div>
+              <button
+                className={styles.buttons}
+                id={this.props.id}
+                key={this.props.id}
+                onClick={this.onVaccinateHandler}
+              >
+                Done
+              </button>
             </div>
           </div>
-        </div>
-
-        <div className={styles.flexp3}>
-          <div className={styles.sch}>Dose {this.props.dose}</div>
-          <button
-            className={styles.buttons}
-            id={this.props.id}
-            key={this.props.id}
-            onClick={this.onVaccinateHandler}
-          >
-            Done
-          </button>
-        </div>
+        )}
       </div>
-      
-      }
-      </div>
-     
-      
     );
   }
 }

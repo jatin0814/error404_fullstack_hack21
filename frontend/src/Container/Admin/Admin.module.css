@@ -57,6 +57,7 @@
   display: inline-block;
   background-color: #0084ff;
   width: 25%;
+  min-width: 180px;
   margin: auto;
   padding: 10px;
   color: white;
@@ -70,7 +71,7 @@
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
   text-align: center;
-  min-width: 180px;
+  min-width: 200px;
   transition: all ease 0.2s;
   -webkit-transition: all ease 0.2s;
   -moz-transition: all ease 0.2s;
@@ -106,8 +107,8 @@
   display: block;
   color: #474646;
   text-align: center;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   border: 3px solid #474646;
   border-top: 0px none;
   border-radius: 100px;
@@ -115,7 +116,7 @@
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  font-size: 220%;
+  font-size: 200%;
   padding-top: 30px;
   position: relative;
   font-weight: 500;
@@ -129,11 +130,11 @@
 }
 
 .informa div {
-  margin-top: 50px;
+  margin-top: 30px;
   font-size: 45%;
   text-transform: uppercase;
   font-weight: 500;
-  width: 100px;
+  width: 150px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -239,6 +240,16 @@
     width: 95%;
     margin-left: 2.5%;
   }
+  .add_button2 {
+    font-size: 90%;
+  }
+  .add_button3 {
+    font-size: 90%;
+  }
+  .add_button2,
+  .add_button3 {
+    min-width: 180px;
+  }
 }
 
 @media (max-width: 693px) {
@@ -251,7 +262,7 @@
   .add_button3 {
     width: 20%;
     font-size: 90%;
-    min-width: 150px;
+    min-width: 180px;
   }
 }
 
@@ -265,7 +276,6 @@
     margin-left: 50px;
     width: 20%;
     font-size: 90%;
-    min-width: 150px;
   }
 }
 
@@ -276,11 +286,16 @@
     letter-spacing: 0.5px;
   }
 
-  .add_button2 {
+  .add_button2,
+  .add_button3 {
     margin-left: 50px;
     width: 20%;
-    font-size: 90%;
+    font-size: 80%;
+    letter-spacing: 0;
     min-width: 150px;
+  }
+  .add_button3 {
+    margin-left: 20px;
   }
   .number {
     font-size: 90%;
