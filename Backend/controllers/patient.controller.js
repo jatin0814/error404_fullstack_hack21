@@ -139,65 +139,86 @@ exports.vaccinate = async (req, res) => {
 
 exports.schedulePatient = (req,res,next) => {
     const vanNumber = req.body.vanNumber;
+    const phoneNumber = req.body.phoneNumber;
+    let TDate = new Date()
     Van.findOne({number:vanNumber}).then(van=>{
-        const vanDate = van.Date;
-        const todayData = new Date(vanDate);
-        if(vanDate.getTime() < todayData.getTime()){
-            let today = new Date();
-            var tomorrow = new Date();
-            tomorrow.setDate(today.getDate() + 1)
-            van.Date = today
-            if(van.count!==0){
-                van.count=0
-            }
-            van.count = van.count + 1;
-            van.save().then(result=>{
-                Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                    patient.vaccinationDate =  date.format(tomorrow, 'YYYY/MM/DD');
-                    patient.save().then(result=>{
-                        return res.status(200).json({Date:tomorrow})
+        Patient.find({phone:phoneNumber}).then(patients=>{
+                let filterPatient = patients.filter(patient => {
+                    return patient.vaccinationDate !== null;
+                })
+                if(filterPatient.length>0){
+                    van.count = van.count + 1;
+                    van.save().then(result=>{
+                        Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                            patient.vaccinationDate =  filterPatient[0].vaccinationDate
+                            patient.save().then(result=>{
+                                return res.status(200).json({Date:filterPatient[0].vaccinationDate})
+                            })
+                        })
+                    }).catch(err=>{
+                        console.log(err)
+                        return res.status(400).json({"message":"someting went wrong!!"})
                     })
-                })
-            }).catch(err=>{
-                console.log(err)
-                return res.status(400).json({"message":"someting went wrong!!"})
-            })
-          }
-          
-          else if(vanDate.getTime() === todayData.getTime() && van.count<10){
-            van.count = van.count + 1;
-            van.save().then(result=>{
-                Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                    patient.vaccinationDate =   date.format(van.Date, 'YYYY/MM/DD');
-                    patient.save().then(result=>{
-                        return res.status(200).json({Date:van.Date})
+                }
+                const vanDate = van.Date;
+                const todayData = new Date(vanDate);
+                if(vanDate.getTime() < todayData.getTime()){
+                    let today = new Date();
+                    var tomorrow = new Date();
+                    tomorrow.setDate(today.getDate() + 1)
+                    van.Date = today
+                    if(van.count!==0){
+                        van.count=0
+                    }
+                    van.count = van.count + 1;
+                    van.save().then(result=>{
+                        Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                            patient.vaccinationDate =  date.format(tomorrow, 'YYYY/MM/DD');
+                            patient.save().then(result=>{
+                                return res.status(200).json({Date:tomorrow})
+                            })
+                        })
+                    }).catch(err=>{
+                        console.log(err)
+                        return res.status(400).json({"message":"someting went wrong!!"})
                     })
-                })
-            }).catch(err=>{
-                return res.status(400).json({message:"Something Went Wrong!!"})
-            })
-          }
-          
-          else if(van.count>=10){
-            var tomorrow = new Date();
-            tomorrow.setDate(vanDate.getDate() + 1)
-            if(van.count===10){
-                van.count=0
-            }
-            van.count = van.count + 1;
-            van.Date = tomorrow
-            van.save().then(result=>{
-            Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                patient.vaccinationDate =   date.format(tomorrow, 'YYYY/MM/DD');
-                patient.save(then=>{
-                    return res.status(200).json({Date:tomorrow})
-                }).catch(err=>{
-                    return res.status(400).json({message:"Something Went Wrong!!"})
-                })
-            })}).catch(err=>{
-                return res.status(400).json({message:"Something Went Wrong!!"})
-            })
-          }
+                  }
+                  
+                  else if(vanDate.getTime() === todayData.getTime() && van.count<10){
+                    van.count = van.count + 1;
+                    van.save().then(result=>{
+                        Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                            patient.vaccinationDate =   date.format(van.Date, 'YYYY/MM/DD');
+                            patient.save().then(result=>{
+                                return res.status(200).json({Date:van.Date})
+                            })
+                        })
+                    }).catch(err=>{
+                        return res.status(400).json({message:"Something Went Wrong!!"})
+                    })
+                  }
+                  
+                  else if(van.count>=10){
+                    var tomorrow = new Date();
+                    tomorrow.setDate(vanDate.getDate() + 1)
+                    if(van.count===10){
+                        van.count=0
+                    }
+                    van.count = van.count + 1;
+                    van.Date = tomorrow
+                    van.save().then(result=>{
+                    Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                        patient.vaccinationDate =   date.format(tomorrow, 'YYYY/MM/DD');
+                        patient.save(then=>{
+                            return res.status(200).json({Date:tomorrow})
+                        }).catch(err=>{
+                            return res.status(400).json({message:"Something Went Wrong!!"})
+                        })
+                    })}).catch(err=>{
+                        return res.status(400).json({message:"Something Went Wrong!!"})
+                    })
+                  }
+        })
     })
 }
 

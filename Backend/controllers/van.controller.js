@@ -1,5 +1,19 @@
 const Van = require("../models/van.model")
 const jwt = require("jsonwebtoken")
+const Patient = require("../models/patient.model")
+var axios = require("axios").default;
+
+
+function timeConvert(n) {
+    var num = n;
+    var hours = (num / 60);
+    var rhours = Math.floor(hours);
+    var minutes = (hours - rhours) * 60;
+    var rminutes = Math.round(minutes);
+    return rhours + " hour(s) and " + rminutes + " minute(s)";
+}
+
+
 exports.regVan = async (req,res) => {
     const date = new Date()
     console.log("date",date)
@@ -50,4 +64,41 @@ exports.vanlogin = (req,res,next) => {
         )
         return res.status(200).json({message:"Van Found",token:token,userId:van._id.toString()})
     })
+}
+
+
+exports.getLiveTime = (req,res,next) => {
+        console.log("req.body",req.body)
+        let patientId = req.body.id;
+        let liveVanLoc = req.body.liveVanLoc;
+        console.log(liveVanLoc)
+        let start_point = `(${liveVanLoc[0]},${liveVanLoc[1]})`
+        
+        Patient.findOne({_id:patientId}).then(patient=>{
+            console.log(patient)
+            let coordinateArray = patient.coordinate;
+            let end_point = `(${coordinateArray[0]},${coordinateArray[1]})`
+            var options = {
+            method: 'GET',
+            url: 'https://distance-calculator.p.rapidapi.com/v1/one_to_one',
+            params: {
+                start_point: start_point,
+                end_point: end_point,
+                unit: 'kilometers'
+            },
+            headers: {
+                'content-type': 'application/json',
+                'x-rapidapi-key': 'eca084dc7emshabfc11644902855p117df7jsn30163e604465',
+                'x-rapidapi-host': 'distance-calculator.p.rapidapi.com'
+            }
+            };
+    
+            axios.request(options).then(function (response) {
+                let time = timeConvert(response.data.distance/50);
+                return res.status(200).json({time:time})
+            }).catch(function (error) {
+                console.error(error);
+                return res.status(400).json({message:"something went wrong!!"})
+            });
+        })
 }

@@ -7,6 +7,15 @@ import SideDrawer from "../SideDrawer/SideDrawer";
 
 
 class Navbar extends Component {
+
+  state = {
+    drawer: false
+  }
+
+  onDrawerChange = () => {
+    this.setState({drawer : !this.state.drawer})
+    console.log(this.state.drawer)
+  }
   
   render() {
     return (

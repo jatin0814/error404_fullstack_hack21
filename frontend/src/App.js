@@ -1,19 +1,14 @@
 import React, {Component} from 'react';
 import {Route,Switch} from 'react-router-dom';
-// import {connect} from 'react-redux'
-
 
 import User from './Container/Auth/Public/Public';
 import Home from './Container/Home/Home';
 import Admin from './Container/Admin/Admin'
 import Map from './Container/Map/Map'
 import Help from './Components/Help/Help'
+import Chat from './Container/Chat/Chat'
 
 class App extends Component{
-
-  // componentDidMount(){
-  //   this.props.onTryAutoSignup();
-  // }
 
   render(){
 
@@ -26,6 +21,7 @@ class App extends Component{
         <Route path='/admin' exact component={Admin}/>
         <Route path='/directions' exact component={Map}/>
         <Route path='/help' exact component={Help}/>
+        <Route path='/chat/' exact component={Chat}/>
         </Switch>
       </div>
     )
