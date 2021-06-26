@@ -1,6 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
 .footer {
   text-align: center;
-  background-color: #459df1;
-  color: white;
+  background-color: #021220;
+  color: rgb(233, 233, 233);
   padding: 5px;
+  width: 100vw;
+  z-index: 500;
+  margin-top: 50px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 10px;
+}
+
+.fitemli {
+  list-style-type: none;
+}
+.fitems {
+  margin: 10px 0;
+}
+.fitems li {
+  margin: 10px 0;
+}
+.fitemli div {
+  display: inline-block;
+}
+.fitems li a:link,
+.fitems li a:visited {
+  text-shadow: 1px 0 2px rgb(180, 21, 21);
+  color: rgb(223, 223, 223);
+}
+.fitems li a:hover {
+  cursor: pointer;
+  color: #4f9fe6;
+}
+.last,
+.last2 {
+  padding: 20px 0;
+  font-size: 130%;
+  letter-spacing: 4px;
+}
+.last2 {
+  padding: 0 0 20px;
+}
+
+.fitemsm {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 20vw;
+}
+.fitemsm .fitemli {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fitemli li a:link,
+.fitemli li a:visited {
+  color: white;
+}
+
+.fitemli li a:hover,
+.fitemli li a:active {
+  color: #4f9fe6;
 }

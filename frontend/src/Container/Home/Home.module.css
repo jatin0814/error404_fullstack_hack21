@@ -96,11 +96,13 @@ body {
 }
 
 .infor {
-  position: absolute;
-  top: 18vh;
+  position: relative;
+  top: 12vh;
+  /* top: 18px; */
   display: flex;
   width: 80vw;
   justify-content: space-around;
+  /* background: red; */
 }
 .informa {
   display: block;
@@ -129,6 +131,7 @@ body {
 .informa div {
   margin-top: 50px;
   font-size: 45%;
+  text-transform: uppercase;
 }
 .informa:hover {
   border: 3px solid white;
@@ -139,7 +142,7 @@ body {
   background-color: white;
   color: rgb(97, 97, 97);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
-  width: 50%;
+  width: 80%;
   padding: 20px;
   margin: 50px auto;
 
@@ -159,6 +162,7 @@ body {
 
 .mem {
   margin-top: 40px;
+  padding-top: 20px;
   border: 3px solid rgb(202, 202, 202);
   margin-left: 10%;
   width: 80%;
@@ -172,10 +176,20 @@ body {
   -o-border-radius: 20px;
 }
 
-.date {
-  margin-left: 60px;
+.number {
+  padding-bottom: 40px;
+  margin: 0 60px;
+  float: left;
+  font-weight: bold;
 }
 
+.regno {
+  margin-left: 30%;
+  float: left;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 110%;
+}
 .add_button {
   background-color: #2378c9;
   width: max-content;
@@ -199,7 +213,7 @@ body {
 }
 
 .info {
-  margin: 50px 0px;
+  margin: 20px 0px;
   background-color: rgba(71, 201, 114, 0.81);
   border-radius: 5px;
   padding: 15px;
@@ -251,16 +265,14 @@ body {
   border-bottom: 2px solid #459df1;
 }
 
-.radioBtn {
-  margin: 15px 10px;
-  /* padding: 10px; */
-}
 
 .submit {
   background-color: #459df1;
   padding: 10px;
   width: max-content;
-  margin-left: auto;
+  /* margin-left: auto; */
+  margin: 0 auto;
+  margin-top: 17px;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -274,3 +286,23 @@ body {
 .none {
   display: none;
 }
+
+.inputText{
+  /* color:red; */
+  position: relative;
+  top: -3px;
+  
+}
+
+.radioBtn {
+  margin: 15px 10px;
+  /* padding: 10px; */
+  cursor: pointer;
+
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+    
+}
+
