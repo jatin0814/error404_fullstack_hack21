@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
-var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-
-
+import axios from "axios";
+import date from 'date-and-time';
 
 import styles from './Map.module.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
+var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
 class Map extends Component {
 
+  state = {
+    coordinates: [0,0]
+  }
+
     componentDidMount(){
-        console.log("in componentDidMount")
+
+      var today = new Date();
+
+      console.log(date.format(today, 'YYYY/MM/DD'))
+  
+      const data = {
+      "date" : date.format(today, 'YYYY/MM/DD')
+    }
+        
         mapboxgl.accessToken = 'pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg';
         
         const map = new mapboxgl.Map({
@@ -21,6 +33,18 @@ class Map extends Component {
         center:[78.962883,20.593683],
         zoom: 18
       })
+
+
+      axios
+      .post("http://localhost:9000/patient/patientOnDate" ,data)
+      .then((res) => {
+        this.setState({coordinates: res.data.patients[0].coordinate.reverse()})
+        console.log(this.state.coordinates);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+
     
       map.on('load', function() {
         var directions = new MapboxDirections({
@@ -40,7 +64,8 @@ class Map extends Component {
         return(
             <div>
                 <Navbar/>
-                <div>
+                <button>SHOW NEXT PATIENT LOCATION</button>
+                <div className={styles.map}>
                     <div id='map' style={{width:"100vw",height:"100vh"}}></div>
                 </div>
                 <Footer/>
