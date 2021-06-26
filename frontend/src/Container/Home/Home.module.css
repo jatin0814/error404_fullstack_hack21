@@ -307,6 +307,23 @@ body {
   display: none;
 }
 
+.inputText {
+  /* color:red; */
+  position: relative;
+  top: -3px;
+}
+
+.radioBtn {
+  margin: 15px 10px;
+  /* padding: 10px; */
+  cursor: pointer;
+
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+/*Media Queries*/
 @media (max-width: 1100px) {
   .informa {
     font-size: 180%;
@@ -424,20 +441,4 @@ body {
   .infor {
     margin-top: 20px;
   }
-}
-.inputText {
-  /* color:red; */
-  position: relative;
-  top: -3px;
-}
-
-.radioBtn {
-  margin: 15px 10px;
-  /* padding: 10px; */
-  cursor: pointer;
-
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  border-radius: 50%;
 }

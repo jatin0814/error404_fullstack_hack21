@@ -8,11 +8,12 @@
 }
 
 .box {
-  width: 80%;
-  margin: 50px 10%;
+  width: 97%;
+  margin: 50px 1.5%;
   background-color: white;
   /* border: 1px solid black; */
-  border-left: 5px solid #50a8fc;
+  border: 0.5px solid rgb(206, 205, 205);
+  border-left: 5px solid #e46f60;
   padding: 25px 20px;
   border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -21,7 +22,8 @@
   -o-border-radius: 15px;
   position: relative;
   font-size: 120%;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+
+  box-shadow: 0 0.5px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .buttond1,
@@ -126,3 +128,6 @@
     border-right: 2px solid #0084ff;
   }
   */
+/*
+@media (min-width: );
+*/
