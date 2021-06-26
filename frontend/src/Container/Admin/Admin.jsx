@@ -4,24 +4,22 @@ import axios from "axios";
 import styles from "./Admin.module.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import Patient from '../cards/Patient/Patient';
+import Patient from "../Cards/Patient/Patient";
 import { BiPlusMedical } from "react-icons/bi";
 import { BiGroup } from "react-icons/bi";
 import { BiHandicap } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
 
 class Admin extends Component {
-
-  state={
-    patients: []
-  }
+  state = {
+    patients: [],
+  };
 
   componentDidMount() {
-
     axios
       .get("http://localhost:9000/patient/get-allpatients")
       .then((res) => {
-        this.setState({patients: res.data.patients})
+        this.setState({ patients: res.data.patients });
         console.log(this.state.patients);
       })
       .catch((e) => {
@@ -30,7 +28,6 @@ class Admin extends Component {
   }
 
   render() {
-
     // this.state.patients.map((patient) => (
     //   console.log("function")
     // ))
@@ -50,7 +47,6 @@ class Admin extends Component {
         ))}
       </div>
     );
-
 
     return (
       <div className={styles.admincss}>
@@ -99,9 +95,7 @@ class Admin extends Component {
         </div>
         <Navbar admin={true} />
 
-        <div>
-          {patients}
-        </div>
+        <div>{patients}</div>
 
         {/* <Patient
           name="sidharth saini"
@@ -131,7 +125,7 @@ class Admin extends Component {
           aadhar="123456789"
         /> */}
 
-<Patient
+        <Patient
           name="sidharth saini"
           age="21"
           gender="male"
