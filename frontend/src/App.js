@@ -7,6 +7,7 @@ import User from './Container/Auth/Public/Public';
 import Home from './Container/Home/Home';
 import Admin from './Container/Admin/Admin'
 import Map from './Container/Map/Map'
+import Help from './Components/Help/Help'
 
 class App extends Component{
 
@@ -24,11 +25,11 @@ class App extends Component{
         <Route path='/auth' exact component={User}/>
         <Route path='/admin' exact component={Admin}/>
         <Route path='/directions' exact component={Map}/>
+        <Route path='/help' exact component={Help}/>
         </Switch>
       </div>
     )
   }
 }
-
 
 export default App;

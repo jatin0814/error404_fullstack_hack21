@@ -48,7 +48,7 @@ class Public extends Component {
 
         <Admin show={this.state.admin} switch={this.onSwitchLoginHandler} />
 
-        <Verify show={this.props.verify}>
+        <Verify show={true}>
           <div className={styles.verify}>
             <div className={styles.header}>
               <div className={styles.env}>
