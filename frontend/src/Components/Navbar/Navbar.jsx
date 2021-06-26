@@ -6,23 +6,28 @@ import {CgMenuRound} from "react-icons/cg";
 
 
 class Navbar extends Component {
+
+  state = {
+    drawer: false
+  }
+
+  onDrawerChange = () => {
+    this.setState({drawer : !this.state.drawer})
+    console.log(this.state.drawer)
+  }
   
   render() {
     return (
       <div>      
-        <ul className={styles.main_nav}>
-        {/*  */}
-        <nav className={styles.hamNav}>
+        <ul className={styles.main_nav}> 
+
           <CgMenuRound 
           className={styles.hamburger}
           size='40px'
           color='white'
-          onClick={ () => console.log("Clicked on it!")}   />
-        </nav>
-        {/*  */}
-
-        {/*  */}
-
+          onClick={this.onDrawerChange}
+         />
+       
           <div className={styles.prac}>
             
           </div>
