@@ -17,7 +17,7 @@ body {
       rgba(0, 0, 0, 0.8) 15%,
       rgba(0, 0, 0, 0.2) 60%
     ),
-    url("../../Images/home_cover.jpg");
+    url("../../images/home_cover.jpg");
   /*pussh*/
   /* Set a specific height */
   min-height: 100vh;
@@ -204,7 +204,6 @@ body {
   border-radius: 5px;
   padding: 15px;
   font-weight: 500;
-
   color: rgba(28, 18, 18, 0.57);
 }
 
