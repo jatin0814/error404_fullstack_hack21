@@ -6,7 +6,7 @@ import AddMember from "../../UI/Modal/Modal";
 import Navbar from "../../Components/Navbar/Navbar";
 import Navbarb from "../../Components/Navbar/Navbar2";
 import Footer from "../../Components/Footer/Footer";
-import Member from "../../Container/Cards/User/User";
+import Member from "../../Container/cards/User/User";
 import { FaAngellist } from "react-icons/fa";
 import { BiPlusMedical } from "react-icons/bi";
 import { BiGroup } from "react-icons/bi";
