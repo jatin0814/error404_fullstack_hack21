@@ -48,6 +48,28 @@ class Chat extends Component {
         this.autoScroll();
     }
 
+    onSendAEFI = (event) => {
+
+        var today = new Date(),
+        time = today.getHours() + ':' + today.getMinutes();
+
+        const user = localStorage.getItem("phone")
+
+        event.preventDefault();
+
+        socket.emit('sendMessage', "AEFI EMERGENCY! I need immidiate help.", time, user, (err) => {
+           if(err) {
+               console.log(err)
+           }else{
+               console.log('message delivered!')
+               this.setState({mssg: ''})
+               this.nameInput.focus();
+           }
+        });
+
+        this.autoScroll();
+    }
+
     onSendLocation = (event) => {
 
         var today = new Date(),
@@ -171,6 +193,7 @@ class Chat extends Component {
                                         <i class="fa fa-arrow-circle-right"></i>
                                         </button>
                                         <button onClick={this.onSendLocation} className={styles.loc}>Send Location</button>
+                                        <button onClick={this.onSendAEFI} className={styles.loc}>AEFI</button>
 
                                     </form>
 
