@@ -31,6 +31,11 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded())
 
+
+app.use("/hello",(req,res,next)=>{
+    res.send("<h1>WORLD<h1/>")
+    next();
+})
 app.use("/user",userRoute)
 app.use("/patient",patientRoute)
 app.use("/van",vanRoute)
