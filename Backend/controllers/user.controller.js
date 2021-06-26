@@ -70,7 +70,7 @@ exports.verifyUser = (req,res,next) =>{
 }
 
 exports.getMembers = async (req,res,next) =>{
-    console.log(req.body)
+    console.log("reached")
 
     try {
 
