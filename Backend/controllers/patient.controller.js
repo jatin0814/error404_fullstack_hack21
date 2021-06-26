@@ -133,3 +133,63 @@ exports.vaccinate = async (req, res) => {
         res.status(400).send({Error: e.message})
     }
 }
+
+
+
+exports.schedulePatient = (req,res,next) => {
+    const vanNumber = req.body.vanNumber;
+    Van.findOne({number:vanNumber}).then(van=>{
+        const vanDate = van.Date;
+        const todayData = new Date(vanDate);
+        if(vanDate.getTime() < todayData.getTime()){
+            let today = new Date();
+            var tomorrow = new Date();
+            tomorrow.setDate(today.getDate() + 1)
+            van.Date = today
+            if(van.count!==0){
+                van.count=0
+            }
+            van.count = van.count + 1;
+            van.save().then(result=>{
+                Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                    patient.vaccinationDate = tomorrow
+                    patient.save().then(result=>{
+                        return res.status(200).json({Date:tomorrow})
+                    })
+                })
+            }).catch(err=>{
+                console.log(err)
+                return res.status(400).json({"message":"someting went wrong!!"})
+            })
+          }
+          
+          else if(vanDate.getTime() === todayData.getTime() && van.count<10){
+            van.count = van.count + 1;
+            van.save().then(result=>{
+                Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                    patient.vaccinationDate = van.Date;
+                    patient.save().then(result=>{
+                        return res.status(200).json({Date:van.Date})
+                    })
+                })
+            })
+          }
+          
+          else if(van.count>=10){
+            var tomorrow = new Date();
+            tomorrow.setDate(vanDate.getDate() + 1)
+            if(van.count===10){
+                van.count=0
+            }
+            van.count = van.count + 1;
+            van.Date = tomorrow
+            van.save().then(result=>{
+            Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                patient.vaccinationDate = tomorrow
+                patient.save(then=>{
+                    return res.status(200).json({Date:tomorrow})
+                })
+            })})
+          }
+    })
+}

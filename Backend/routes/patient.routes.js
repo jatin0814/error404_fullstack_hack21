@@ -8,7 +8,7 @@ route.post('/add-patient',patientController.addPatient)
 route.get('/get-patients',patientController.getPatients)
 route.post('/schedulePatient',patientController.schedulePatient)
 route.post('/get-patients',patientController.getPatients)
-route.post('/delte-patient', patientController.deletePatients)
+route.post('/delete-patient', patientController.deletePatients)
 
 module.exports = route
 
