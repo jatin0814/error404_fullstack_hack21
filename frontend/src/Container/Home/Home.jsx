@@ -16,6 +16,8 @@ import { FaUserCheck } from "react-icons/fa";
 import Bounce from 'react-reveal/Bounce';
 import Fade from 'react-reveal/Fade';
 
+import date from 'date-and-time';
+
 class Home extends Component {
   state = {
     modal: false,
@@ -33,6 +35,8 @@ class Home extends Component {
   componentDidMount() {
 
     var today = new Date();
+
+    console.log(date.format(today, 'YYYY/MM/DD'))
 
     console.log(today);
 
