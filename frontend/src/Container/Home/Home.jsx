@@ -16,7 +16,7 @@ import { FaUserCheck } from "react-icons/fa";
 import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
 
-import date from 'date-and-time';
+
 
 class Home extends Component {
   state = {
@@ -33,11 +33,6 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    var today = new Date();
-
-    console.log(date.format(today, 'YYYY/MM/DD'))
-
-    console.log(today);
 
     navigator.geolocation.getCurrentPosition((position) => {
       this.setState({ lat: position.coords.latitude });
