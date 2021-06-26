@@ -257,7 +257,7 @@ class Home extends Component {
               <div className={styles.reg} className={styles.informa}>
                 <BiNotepad className={styles.icon2} />
                 225
-                <div>Registrations</div>
+                <div>Users</div>
               </div>
               <div className={styles.dose1} className={styles.informa}>
                 <BiPlusMedical className={styles.icon2} />
@@ -279,13 +279,17 @@ class Home extends Component {
         </div>
         {/*<Navbarb />*/}
         <div className={styles.mem}>
-          <div className={styles.regno}>Registered Number</div>
-          <div className={styles.number}>*** *** 6845</div>
+          <div className={styles.det}>Account Details</div>
+
+          <div className={styles.memno}>
+            <div className={styles.regno}>Registered Number :</div>
+            <div className={styles.number}>*** *** 6845</div>
+          </div>
 
           <div>
             <Member
               dose="1"
-              name="sidharth"
+              name="Sidharth Saini"
               gender="male"
               special={false}
               otp="0000"

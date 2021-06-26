@@ -59,6 +59,13 @@
   }
 }
 
+@media (max-height: 640px) {
+  .modal {
+    margin-bottom: 20px;
+    top: 10%;
+  }
+}
+
 @media (max-height: 480px) {
   .modal {
     margin-bottom: 20px;
