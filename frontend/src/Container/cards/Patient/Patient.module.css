@@ -57,9 +57,18 @@
   cursor: pointer;
   padding: 5px;
 }
-.flexp {
+.flexclass {
   display: flex;
-  width: 50%;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.flexp {
+  margin-top: 10px;
+  display: flex;
+  width: 80%;
   justify-content: space-between;
   font-size: 120%;
 }
@@ -67,38 +76,43 @@
   display: flex;
   font-size: 90%;
   align-items: baseline;
-  color: #005cb3;
+  color: grey;
+  letter-spacing: 0;
+  font-size: 17px;
   margin-bottom: 10px;
 }
 .name,
 .age,
 .gender {
-  font-size: 120%;
+  font-size: 140%;
   color: #005cb3;
   margin-right: 0px;
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .name {
   letter-spacing: 2px;
   word-spacing: 2px;
 }
 .age {
-  font-size: 90%;
+  font-size: 100%;
   margin-right: 40px;
 }
 
 .gender {
-  font-size: 90%;
+  font-size: 100%;
 }
 
 .otp,
 .sp {
   padding-left: 5px;
-  color: #005cb3;
+  color: black;
 }
 
 .flexp3 {
+  margin-top: 10px;
   border-top: 1px solid rgb(216, 216, 216);
   padding-top: 10px;
   padding-bottom: 10px;
@@ -128,6 +142,20 @@
     border-right: 2px solid #0084ff;
   }
   */
-/*
-@media (min-width: );
-*/
+
+@media (max-width: 620px) {
+  .flexclass {
+    display: block;
+  }
+  .name,
+  .age,
+  .gender {
+    padding-top: 10px;
+  }
+  .name {
+    padding-top: 0px;
+  }
+  .flexp {
+    display: block;
+  }
+}
