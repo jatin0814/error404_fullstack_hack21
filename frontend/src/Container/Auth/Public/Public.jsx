@@ -132,7 +132,7 @@ class Public extends Component {
               <div className={styles.icon}>
                 <i className="fa fa-home"></i>
               </div>
-              <div className={styles.feat_txt}>Convinient</div>
+              <div className={styles.feat_txt}>Convenient</div>
             </div>
           </div>
 
