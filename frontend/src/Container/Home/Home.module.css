@@ -129,6 +129,7 @@ body {
 .informa div {
   margin-top: 50px;
   font-size: 45%;
+  text-transform: uppercase;
 }
 .informa:hover {
   border: 3px solid white;
@@ -139,7 +140,7 @@ body {
   background-color: white;
   color: rgb(97, 97, 97);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
-  width: 50%;
+  width: 80%;
   padding: 20px;
   margin: 50px auto;
 
@@ -199,7 +200,7 @@ body {
 }
 
 .info {
-  margin: 50px 0px;
+  margin: 20px 0px;
   background-color: rgba(71, 201, 114, 0.81);
   border-radius: 5px;
   padding: 15px;
