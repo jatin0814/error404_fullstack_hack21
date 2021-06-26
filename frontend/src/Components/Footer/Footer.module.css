@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
 }
 .footer {
   text-align: center;
@@ -12,12 +11,14 @@
   width: 100vw;
   z-index: 500;
   margin-top: 50px;
+  font-size: 16px;
 }
 
 .flex {
   display: flex;
-  justify-content: space-evenly;
-  margin: 20px 10px;
+  justify-content: space-between;
+  margin: 20px 70px;
+  flex-wrap: wrap;
 }
 
 .fitemli {
@@ -36,6 +37,7 @@
 .fitems li a:visited {
   text-shadow: 1px 0 2px rgb(180, 21, 21);
   color: rgb(223, 223, 223);
+  font-size: 110%;
 }
 .fitems li a:hover {
   cursor: pointer;
@@ -71,4 +73,35 @@
 .fitemli li a:hover,
 .fitemli li a:active {
   color: #4f9fe6;
+}
+
+@media (max-width: 767px) {
+  .last,
+  .last2 {
+    font-size: 110%;
+  }
+
+  .fitems li a:link,
+  .fitems li a:visited {
+    font-size: 100%;
+  }
+  .fitems {
+    flex: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .last,
+  .last2 {
+    font-size: 100%;
+  }
+  .fitems li a:link,
+  .fitems li a:visited {
+    font-size: 80%;
+  }
+  .flex {
+    margin: auto 10px;
+  }
+  .footer {
+    min-height: 432px;
+  }
 }

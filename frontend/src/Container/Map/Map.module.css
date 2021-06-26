@@ -1,0 +1,65 @@
+.mapbody {
+  margin-top: 90px;
+  min-width: 600px;
+  min-height: 600px;
+  overflow: auto;
+}
+.map {
+  margin-right: 10px;
+  width: 100vw;
+  height: 100vh;
+  min-width: 600px;
+  min-height: 600px;
+
+  margin-bottom: -60px;
+}
+
+.next button {
+  position: absolute;
+  top: 60px;
+  left: 350px;
+  z-index: 100;
+  min-width: 140px;
+  padding: 5px 20px;
+  background-color: #0e589e;
+  color: white;
+  border: 1px solid black;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  font-weight: 300;
+}
+.center button {
+  position: absolute;
+  top: 20px;
+  left: 350px;
+  z-index: 100;
+  min-width: 140px;
+  padding: 5px 20px;
+  background-color: #0e589e;
+  color: white;
+  border: 1px solid black;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .next button {
+    top: 80vh;
+    left: 20px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+  .center button {
+    top: 80vh;
+    left: 160px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+}

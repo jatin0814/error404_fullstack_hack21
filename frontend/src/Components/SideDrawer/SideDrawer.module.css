@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (max-width: 700px){
+.drawer{
+    background-color: #181818;
+    height:100px;
+}
+
+.hamburger{
+    display:block;
+    position:absolute;
+    left: 90%;
+    top: 1%;
+    z-index: 1000;   
+    
+  } 
+
+  .logo {
+    height: 70px;
+    display: inline;
+    padding-left: 15px;
+    margin: 0px;
+  }
+
+  .name {
+    margin-right: 60px;
+    /* margin-bottom: 10px; */
+    color: white;
+    padding-left:15px;
+    
+  }
+
+  .vax {
+    color: #0084ffd5;
+    text-transform: none;
+    font-size: 90%;
+    font-weight: bold;
+  }
+
+}
+
+@media (min-width: 701px){
+    .drawer{
+        display: none;
+}
+}
