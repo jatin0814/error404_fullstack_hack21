@@ -27,6 +27,23 @@ const vansSchema = new schema({
     coordinate:{
         type:Array,
         required:true
+    },
+    Date:{
+        type:Date,
+        require:true
+    },
+    count:{
+        type:Number,
+        require:true,
+        default:0
+    },
+    username:{
+        type:String,
+        require:true
+    },
+    password:{
+        type:String,
+        require:true
     }
 })
 
