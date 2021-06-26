@@ -6,8 +6,8 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Patient from "../cards/Patient/Patient";
 import { BiPlusMedical } from "react-icons/bi";
-import { BiGroup } from "react-icons/bi";
-import { BiHandicap } from "react-icons/bi";  
+import { FaShuttleVan } from "react-icons/fa";
+import { BiHandicap } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
 
 class Admin extends Component {
@@ -52,7 +52,7 @@ class Admin extends Component {
       <div className={styles.admincss}>
         <div className={styles.admincss1}>
           <div className={styles.tag}>
-            Get your whole family vaccinated here{" "}
+            Vaccinating the Nation!{" "}
             <div className={styles.tag2}># at home!</div>
           </div>
           <div className={styles.btns}>
@@ -74,17 +74,17 @@ class Admin extends Component {
             <div className={styles.reg} className={styles.informa}>
               <BiNotepad className={styles.icon2} />
               225
-              <div>Registrations</div>
+              <div>Register</div>
             </div>
             <div className={styles.dose1} className={styles.informa}>
               <BiPlusMedical className={styles.icon2} />
               105
-              <div>Doses Given</div>
+              <div>Doses</div>
             </div>
             <div className={styles.fam} className={styles.informa}>
-              <BiGroup className={styles.icon2} />
+              <FaShuttleVan className={styles.icon2} />
               25
-              <div>Families</div>
+              <div>Mobi-Vans</div>
             </div>
             <div className={styles.spcateg} className={styles.informa}>
               <BiHandicap className={styles.icon2} />
@@ -94,10 +94,14 @@ class Admin extends Component {
           </div>
         </div>
         <Navbar admin={true} />
-
-        <div>{patients}</div>
-
-        {/* <Patient
+        <div className={styles.mem}>
+          <div className={styles.det}>Vaccination Details</div>
+          <div className={styles.memno}>
+            <div className={styles.regno}>Vehicle Number: </div>
+            <div className={styles.number}>UP32 CT 1563</div>
+            <div>{patients}</div>
+          </div>
+          {/* <Patient
           name="sidharth saini"
           age="21"
           gender="male"
@@ -125,12 +129,14 @@ class Admin extends Component {
           aadhar="123456789"
         /> */}
 
-        <Patient
-          name="sidharth saini"
-          age="21"
-          gender="male"
-          aadhar="123456789"
-        />
+          <Patient
+            name="sidharth saini"
+            age="21"
+            gender="male"
+            aadhar="123456789"
+          />
+        </div>
+
         <Footer />
       </div>
     );
