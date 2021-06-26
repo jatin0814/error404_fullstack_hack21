@@ -20,6 +20,14 @@ class Navbar extends Component {
           onClick={ () => console.log("Clicked on it!")}   />
         </nav>
         {/*  */}
+
+        {/*  */}
+
+          <div className={styles.prac}>
+            
+          </div>
+
+        {/*  */}
           <li>
             <NavLink
               className={styles.log}
