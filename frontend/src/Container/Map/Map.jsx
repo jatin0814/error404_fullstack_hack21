@@ -10,7 +10,7 @@ var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 class Map extends Component {
   state = {
-    coordinates: [28.3680702, 77.0679478],
+    coordinates: [0,0],
   };
 
   componentDidMount() {
@@ -33,7 +33,7 @@ class Map extends Component {
     });
 
     axios
-      .post("http://localhost:9000/patient/patientOnDate", data)
+      .post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
       .then((res) => {
         this.setState({
           coordinates: res.data.patients[0].coordinate.reverse(),

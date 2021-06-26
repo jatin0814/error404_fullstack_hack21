@@ -17,7 +17,7 @@ class Patient extends Component {
     };
 
     axios
-      .post("http://localhost:9000/patient/vaccinate", data)
+      .post("https://mobivax-api.herokuapp.com/patient/vaccinate", data)
       .then((res) => {
         console.log(res);
       })

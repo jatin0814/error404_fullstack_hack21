@@ -27,7 +27,7 @@ class Admin extends Component {
   }
 
     axios
-      .post("http://localhost:9000/patient/patientOnDate" ,data)
+      .post("https://mobivax-api.herokuapp.com/patient/patientOnDate" ,data)
       .then((res) => {
         this.setState({ patients: res.data.patients });
         console.log(this.date.patients);
