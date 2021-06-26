@@ -145,7 +145,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .home_cont {
-  background-color: white;
+  background-color: rgb(228, 228, 228);
   color: rgb(97, 97, 97);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
   width: 80%;
@@ -160,10 +160,10 @@ body {
   margin: 20px 0px;
   color: rgba(49, 49, 40, 0.81);
   font-size: 20px;
-  background-color: rgba(65, 179, 201, 0.81);
+  background-color: rgba(111, 211, 231, 0.81);
   border-radius: 5px;
   padding: 15px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .mem {
@@ -212,14 +212,15 @@ body {
 }
 .add_button {
   background-color: #2378c9;
-  width: max-content;
+  width: 30%;
   margin: 25px auto;
-
+  min-width: 200px;
   padding: 10px;
   color: white;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
 }
 
 .__plus {
@@ -234,11 +235,11 @@ body {
 
 .info {
   margin: 20px 0px;
-  background-color: rgba(71, 201, 114, 0.81);
+  background-color: rgb(111, 211, 231);
   border-radius: 5px;
   padding: 15px;
   font-weight: 500;
-  color: rgba(28, 18, 18, 0.57);
+  color: rgba(15, 15, 15, 0.959);
 }
 
 /* modal */
