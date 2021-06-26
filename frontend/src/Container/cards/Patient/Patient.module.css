@@ -8,6 +8,7 @@
 }
 
 .box {
+  max-width: 100vw;
   width: 97%;
   margin: 50px 1.5%;
   background-color: white;
