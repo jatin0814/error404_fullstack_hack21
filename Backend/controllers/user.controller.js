@@ -21,7 +21,7 @@ exports.loginUser = (req,res,next) => {
                     to:mobileNo,
                     channel:"sms"
                 }).then(data=>{
-                    return res.status(200).json(data)
+                    return res.status(200).json({message:"OTP send"})
                 }).catch(err=>{
                     console.log(err)
                     return res.status(400).send({message:"Error in sending OTP"})
@@ -71,11 +71,11 @@ exports.verifyUser = (req,res,next) =>{
 
 exports.getMembers = async (req,res,next) =>{
     console.log("reached")
-
+    let mobileNo = "+91" + req.body.phone
     try {
 
-        let users = await User.findOne({mobileNo: req.body.phone}).populate("members").exec()
-        console.log(users.members)
+        let users = await User.findOne({mobileNo: mobileNo}).populate("members").exec()
+        console.log(users)
         res.status(200).send(users.members);
         
     }catch (e) {

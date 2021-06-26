@@ -175,7 +175,7 @@ exports.schedulePatient = (req,res,next) => {
                         Patient.findById({_id:req.body["patientId"]}).then(patient=>{
                             patient.vaccinationDate =  date.format(tomorrow, 'YYYY/MM/DD');
                             patient.save().then(result=>{
-                                return res.status(200).json({Date:tomorrow})
+                                return res.status(200).json({Date:date.format(tomorrow, 'YYYY/MM/DD')})
                             })
                         })
                     }).catch(err=>{
@@ -190,7 +190,7 @@ exports.schedulePatient = (req,res,next) => {
                         Patient.findById({_id:req.body["patientId"]}).then(patient=>{
                             patient.vaccinationDate =   date.format(van.Date, 'YYYY/MM/DD');
                             patient.save().then(result=>{
-                                return res.status(200).json({Date:van.Date})
+                                return res.status(200).json({Date:date.format(van.Date, 'YYYY/MM/DD')})
                             })
                         })
                     }).catch(err=>{
@@ -210,7 +210,7 @@ exports.schedulePatient = (req,res,next) => {
                     Patient.findById({_id:req.body["patientId"]}).then(patient=>{
                         patient.vaccinationDate =   date.format(tomorrow, 'YYYY/MM/DD');
                         patient.save(then=>{
-                            return res.status(200).json({Date:tomorrow})
+                            return res.status(200).json({Date:date.format(tomorrow, 'YYYY/MM/DD')})
                         }).catch(err=>{
                             return res.status(400).json({message:"Something Went Wrong!!"})
                         })
@@ -226,7 +226,7 @@ exports.schedulePatient = (req,res,next) => {
 
 exports.patientOnDate = (req,res,next) => {
     const date = req.body["date"];
-    Patient.find({vaccinationDate:date}).then(patients=>{
+    Patient.find({$and:[{vaccinationDate:date},{vaccinated:false}]}).then(patients=>{
         const sortedPatients = selectionSort(patients)
         return res.status(200).json({patients:sortedPatients})
     }).catch(err=>{

@@ -12,7 +12,7 @@ class Patient extends Component {
       id: ev.target.id,
     };
     axios
-      .post("http://localhost:9000/patient/delte-patient", data)
+      .post("https://mobivax-api.herokuapp.com/patient/delte-patient", data)
       .then((res) => {
         console.log(res);
       })
@@ -31,7 +31,7 @@ class Patient extends Component {
       patientId: ev.target.id
     }
 
-    axios.post("http://localhost:9000/patient/schedulePatient", data)
+    axios.post("https://mobivax-api.herokuapp.com/patient/schedulePatient", data)
     .then((res) => {
       console.log(res)
     })

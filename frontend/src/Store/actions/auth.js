@@ -43,7 +43,7 @@ export const auth = (mobileNo) => {
     const authData = {
       mobileNo: mobileNo,
     };
-    let url = "http://localhost:9000/user/login";
+    let url = "https://mobivax-api.herokuapp.com/user/login";
     axios
       .post(url, authData)
       .then((response) => {
@@ -68,7 +68,7 @@ export const adminAuth = (username, password) => {
       username,
       password
     };
-    let url = "http://localhost:9000/van/vanlogin";
+    let url = "https://mobivax-api.herokuapp.com/van/vanlogin";
     axios
       .post(url, authData)
       .then((response) => {
@@ -91,7 +91,7 @@ export const verify = (mobileNo, otp) => {
       mobileNo,
       otp,
     };
-    let url = "http://localhost:9000/user/verify";
+    let url = "https://mobivax-api.herokuapp.com/user/verify";
 
     axios
       .post(url, authData)

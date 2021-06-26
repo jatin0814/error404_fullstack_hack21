@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
+import styles from './Map.module.css'
+import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
+var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+class Map extends Component {
+=======
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 import axios from "axios";
@@ -10,7 +19,7 @@ var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 class Map extends Component {
   state = {
-    coordinates: [28.3680702, 77.0679478],
+    coordinates: [0,0],
   };
 
   componentDidMount() {
@@ -21,6 +30,7 @@ class Map extends Component {
     const data = {
       date: date.format(today, "YYYY/MM/DD"),
     };
+>>>>>>> a7d64dc6b034671566c898a91da85f81ec82545b
 
     mapboxgl.accessToken =
       "pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg";
@@ -33,7 +43,7 @@ class Map extends Component {
     });
 
     axios
-      .post("http://localhost:9000/patient/patientOnDate", data)
+      .post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
       .then((res) => {
         this.setState({
           coordinates: res.data.patients[0].coordinate.reverse(),

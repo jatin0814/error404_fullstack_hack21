@@ -47,7 +47,7 @@ class Home extends Component {
     };
 
     axios
-      .post("http://localhost:9000/user/members", data)
+      .post("https://mobivax-api.herokuapp.com/user/members", data)
       .then((res) => {
         this.setState({ members: res.data });
         console.log("fetched");
@@ -116,7 +116,7 @@ class Home extends Component {
     console.log(data);
 
     axios
-      .post("http://localhost:9000/patient/add-patient", data)
+      .post("https://mobivax-api.herokuapp.com/patient/add-patient", data)
       .then((response) => {
         console.log(response);
         this.setState({modal: false})
