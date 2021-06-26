@@ -2,11 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 18px;
 }
 body {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(218, 216, 216);
   position: relative;
   overflow-x: hidden;
+  font-size: 18px;
 }
 
 .parallax {
@@ -21,6 +23,7 @@ body {
   /*pussh*/
   /* Set a specific height */
   min-height: 100vh;
+  min-width: 100vw;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -102,22 +105,26 @@ body {
   display: flex;
   width: 80vw;
   justify-content: space-around;
+<<<<<<< HEAD
+  color: rgb(255, 255, 255);
+=======
   /* background: red; */
+>>>>>>> caea46ce6da51728f9e306ccc0355528c5b5309d
 }
 .informa {
   display: block;
   color: white;
   text-align: center;
-  height: 120px;
-  width: 120px;
-  border: 2px solid white;
+  height: 100px;
+  width: 100px;
+  border: 3px solid white;
   border-top: 0px none;
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  font-size: 220%;
+  font-size: 200%;
   padding-top: 30px;
   position: relative;
 }
@@ -126,12 +133,14 @@ body {
   top: -15%;
   left: 34%;
   font-size: 100%;
+  color: rgb(255, 255, 255);
 }
 
 .informa div {
   margin-top: 50px;
   font-size: 45%;
   text-transform: uppercase;
+  color: rgb(255, 255, 255);
 }
 .informa:hover {
   border: 3px solid white;
@@ -162,12 +171,12 @@ body {
 
 .mem {
   margin-top: 40px;
-  padding-top: 20px;
+  padding-top: 50px;
   border: 3px solid rgb(202, 202, 202);
   margin-left: 10%;
   width: 80%;
-  max-width: 1140px;
-  background-color: #e7e7e7;
+
+  background-color: #f5f5f5;
   z-index: -1;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -175,20 +184,34 @@ body {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
-
+.det {
+  font-size: 160%;
+  color: #065daf;
+  font-weight: 600;
+  margin-left: 40px;
+  letter-spacing: 0;
+}
+.memno {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  border-bottom: 1px solid rgb(223, 220, 220);
+}
 .number {
-  padding-bottom: 40px;
   margin: 0 60px;
-  float: left;
+  display: inline-block;
   font-weight: bold;
+  color: #0468c5;
 }
 
 .regno {
-  margin-left: 30%;
-  float: left;
+  margin-left: 30px;
+  text-align: center;
+  display: inline-block;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   font-size: 110%;
+  color: #0660b4;
 }
 .add_button {
   background-color: #2378c9;
@@ -287,6 +310,124 @@ body {
   display: none;
 }
 
+@media (max-width: 1100px) {
+  .informa {
+    font-size: 180%;
+    height: 80px;
+    width: 80px;
+    padding-top: 20px;
+  }
+  .informa div {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 960px) {
+  .tag {
+    font-size: 180%;
+    display: inline-block;
+  }
+
+  .btns {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .tag {
+    font-size: 160%;
+    display: inline-block;
+  }
+  .informa {
+    font-size: 160%;
+    height: 70px;
+    width: 70px;
+    padding-top: 20px;
+  }
+  .informa div {
+    margin-top: 30px;
+  }
+  .home_cont {
+    width: 95%;
+  }
+  .mem {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+}
+
+@media (max-width: 693px) {
+  .tag {
+    font-size: 130%;
+    display: inline-block;
+    letter-spacing: 0;
+  }
+  .add_button2,
+  .add_button3 {
+    width: 20%;
+    font-size: 90%;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 693px) {
+  .tag {
+    font-size: 140%;
+    display: inline-block;
+  }
+
+  .add_button2 {
+    margin-left: 50px;
+    width: 20%;
+    font-size: 90%;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 555px) {
+  .tag {
+    font-size: 120%;
+    display: inline-block;
+    letter-spacing: 0.5px;
+  }
+
+  .add_button2 {
+    margin-left: 50px;
+    width: 20%;
+    font-size: 90%;
+    min-width: 150px;
+  }
+  .number {
+    font-size: 90%;
+    margin-right: 0;
+  }
+  .regno {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 486px) {
+  .tag {
+    font-size: 120%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .add_button2 {
+    margin-left: 15%;
+    width: 50%;
+    font-size: 80%;
+  }
+  .add_button3 {
+    margin-left: 15%;
+    font-size: 80%;
+    width: 50%;
+    margin-bottom: 15px;
+  }
+  .infor {
+    margin-top: 20px;
+  }
+}
 .inputText{
   /* color:red; */
   position: relative;
