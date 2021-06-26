@@ -24,13 +24,14 @@ class Patient extends Component {
   onScheduleHandler = (ev) => {
     console.log(this.props.van)
     console.log(ev.target.id)
+    console.log('reached')
 
     const data = {
       vanNumber: this.props.van,
       patientId: ev.target.id
     }
 
-    axios.post("http://localhost:9000/patient/delte-patient", data)
+    axios.post("http://localhost:9000/patient/schedulePatient", data)
     .then((res) => {
       console.log(res)
     })
