@@ -18,7 +18,7 @@ const selectionSort = arr => {
       arr[i] = arr[minIdx];
       arr[minIdx] = temp;
     }
-    return arr[0];
+    return arr;
   }
 
 exports.addPatient = (req,res,next) => {
@@ -58,18 +58,20 @@ exports.addPatient = (req,res,next) => {
               console.log("lastIndex",lastIndex)
               responseCordArray.splice(lastIndex,1)
               console.log("responseCordArray",responseCordArray)
-              let smallestElement = selectionSort(responseCordArray);
+              let smallestElement = selectionSort(responseCordArray)[0];
               let smallestElementCord = smallestElement['coordinate'];
               let a = smallestElementCord.split(',')[0].split('(')[1];
               let b = smallestElementCord.split(',')[1].split(')')[0];
               let smallestElementCordArray = [];
               smallestElementCordArray.push(parseFloat(a),parseFloat(b))
+              console.log("smallestElement",smallestElement)
               console.log("smallestElementCordArray",smallestElementCordArray)
               Van.findOne({coordinate:smallestElementCordArray}).then(closestVan=>{
                 //   console.log(closestVan)
                     const patient = new Patient({
                         ...req.body,
-                        vanNumber: closestVan.number
+                        vanNumber: closestVan.number,
+                        distance:smallestElement.distance
                     })
                 
                     patient.save().then(result=>{
@@ -130,11 +132,9 @@ exports.vaccinate = async (req, res) => {
         res.status(200).send('vaccinated')
         
     }catch(e) {
-        res.status(400).send({Error: e.message})
+        return res.status(400).send({Error: e.message})
     }
 }
-
-
 
 exports.schedulePatient = (req,res,next) => {
     const vanNumber = req.body.vanNumber;
@@ -172,6 +172,8 @@ exports.schedulePatient = (req,res,next) => {
                         return res.status(200).json({Date:van.Date})
                     })
                 })
+            }).catch(err=>{
+                return res.status(400).json({message:"Something Went Wrong!!"})
             })
           }
           
@@ -188,8 +190,25 @@ exports.schedulePatient = (req,res,next) => {
                 patient.vaccinationDate = tomorrow
                 patient.save(then=>{
                     return res.status(200).json({Date:tomorrow})
+                }).catch(err=>{
+                    return res.status(400).json({message:"Something Went Wrong!!"})
                 })
-            })})
+            })}).catch(err=>{
+                return res.status(400).json({message:"Something Went Wrong!!"})
+            })
           }
     })
 }
+
+
+
+exports.patientOnDate = (req,res,next) => {
+    const date = req.body["date"];
+    Patient.find({vaccinationDate:date}).then(patients=>{
+        const sortedPatients = selectionSort(patients)
+        return res.status(200).json({patients:sortedPatients})
+    }).catch(err=>{
+        return res.status(400).json({message:"Something Went Wrong!!"})
+    })
+}
+

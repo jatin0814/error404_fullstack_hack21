@@ -19,8 +19,8 @@ const patientsSchema = new schema({
         type:String,
         require: true
     },
-    location: {
-        type: String,
+    coordinate: {
+        type: Array,
         require: true
     },
     vanNumber:{
@@ -29,12 +29,12 @@ const patientsSchema = new schema({
     },
     dose: {
         type: Number,
-        default: 0
+        default: 1
     },
     vaccinationDate:{
         type:Date,
         require:true,
-        default: 1
+        default: null
     },
     special: {
         type: Boolean,
@@ -51,6 +51,13 @@ const patientsSchema = new schema({
     otp : {
         type: String,
         default: 0000
+    },
+    vaccineName : {
+        type: String
+    },
+    distance:{
+        type:Number,
+        require:true
     }
 })
 
