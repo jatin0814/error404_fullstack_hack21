@@ -3,6 +3,7 @@ import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../Images/logo.png";
 import {CgMenuRound} from "react-icons/cg";
+import SideDrawer from "../SideDrawer/SideDrawer";
 
 
 class Navbar extends Component {
@@ -10,25 +11,10 @@ class Navbar extends Component {
   render() {
     return (
       <div>      
-        <ul className={styles.main_nav}>
-        {/*  */}
-        <nav className={styles.hamNav}>
-          <CgMenuRound 
-          className={styles.hamburger}
-          size='40px'
-          color='white'
-          onClick={ () => console.log("Clicked on it!")}   />
-        </nav>
-        {/*  */}
-
-        {/*  */}
-
-          <div className={styles.prac}>
-            
-          </div>
-
-        {/*  */}
-          <li>
+        <SideDrawer />       
+        <ul className={styles.main_nav}>  
+        
+         <li>
             <NavLink
               className={styles.log}
               exact

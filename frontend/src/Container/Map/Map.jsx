@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
-var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-
-
-
 import styles from './Map.module.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-
+var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 class Map extends Component {
 
     componentDidMount(){
