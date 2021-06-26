@@ -224,7 +224,7 @@ class Home extends Component {
                 value="special"
                 onClick={this.special}
               />
-              <label for="special">Specially abeled</label>
+              <label for="special">Specially abled</label>
             </div>
 
             <div className={styles.submit} onClick={this.onAddMemberhandler}>
@@ -279,11 +279,8 @@ class Home extends Component {
         </div>
         {/*<Navbarb />*/}
         <div className={styles.mem}>
-          <div className={styles.date}>12/12/12</div>
           <div className={styles.regno}>Registered Number</div>
-
-          <div className={styles.date}>12/12/12</div>
-          <div className={styles.regno}>Registered Number</div>
+          <div className={styles.number}>*** *** 6845</div>
 
           <div>
             <Member

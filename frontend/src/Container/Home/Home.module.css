@@ -160,6 +160,7 @@ body {
 
 .mem {
   margin-top: 40px;
+  padding-top: 20px;
   border: 3px solid rgb(202, 202, 202);
   margin-left: 10%;
   width: 80%;
@@ -173,10 +174,20 @@ body {
   -o-border-radius: 20px;
 }
 
-.date {
-  margin-left: 60px;
+.number {
+  padding-bottom: 40px;
+  margin: 0 60px;
+  float: left;
+  font-weight: bold;
 }
 
+.regno {
+  margin-left: 30%;
+  float: left;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 110%;
+}
 .add_button {
   background-color: #2378c9;
   width: max-content;
