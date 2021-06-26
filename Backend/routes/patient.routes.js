@@ -11,6 +11,6 @@ route.post('/schedulePatient',patientController.schedulePatient)
 route.post('/get-patients',patientController.getPatients)
 route.post('/delete-patient', patientController.deletePatients)
 route.post('/vaccinate', patientController.vaccinate)
-route.get('/patientOnDate',patientController.patientOnDate)
+route.post('/patientOnDate',patientController.patientOnDate)
 module.exports = route
 

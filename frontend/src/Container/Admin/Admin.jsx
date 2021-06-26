@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import date from 'date-and-time';
 
 import styles from "./Admin.module.css";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -16,11 +17,20 @@ class Admin extends Component {
   };
 
   componentDidMount() {
+
+    var today = new Date();
+
+    console.log(date.format(today, 'YYYY/MM/DD'))
+
+    const data = {
+    "date" : date.format(today, 'YYYY/MM/DD')
+  }
+
     axios
-      .get("http://localhost:9000/patient/get-allpatients")
+      .post("http://localhost:9000/patient/patientOnDate" ,data)
       .then((res) => {
         this.setState({ patients: res.data.patients });
-        console.log(this.state.patients);
+        console.log(this.date.patients);
       })
       .catch((e) => {
         console.log(e);
@@ -28,9 +38,7 @@ class Admin extends Component {
   }
 
   render() {
-    // this.state.patients.map((patient) => (
-    //   console.log("function")
-    // ))
+
 
     let patients = (
       <div>
@@ -43,6 +51,7 @@ class Admin extends Component {
             gender={patient.gender}
             special={patient.special}
             otp={patient.otp}
+            vaccinated={patient.vaccinated}
           />
         ))}
       </div>

@@ -32,7 +32,7 @@ const patientsSchema = new schema({
         default: 1
     },
     vaccinationDate:{
-        type:Date,
+        type:String,
         require:true,
         default: null
     },

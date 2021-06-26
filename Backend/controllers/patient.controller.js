@@ -1,4 +1,5 @@
 const dotenv = require("dotenv")
+const date = require("date-and-time")
 const Patient = require("../models/patient.model")
 const Van = require("../models/van.model")
 var axios = require("axios").default;
@@ -152,7 +153,7 @@ exports.schedulePatient = (req,res,next) => {
             van.count = van.count + 1;
             van.save().then(result=>{
                 Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                    patient.vaccinationDate = tomorrow
+                    patient.vaccinationDate =  date.format(tomorrow, 'YYYY/MM/DD');
                     patient.save().then(result=>{
                         return res.status(200).json({Date:tomorrow})
                     })
@@ -167,7 +168,7 @@ exports.schedulePatient = (req,res,next) => {
             van.count = van.count + 1;
             van.save().then(result=>{
                 Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                    patient.vaccinationDate = van.Date;
+                    patient.vaccinationDate =   date.format(van.Date, 'YYYY/MM/DD');
                     patient.save().then(result=>{
                         return res.status(200).json({Date:van.Date})
                     })
@@ -187,7 +188,7 @@ exports.schedulePatient = (req,res,next) => {
             van.Date = tomorrow
             van.save().then(result=>{
             Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                patient.vaccinationDate = tomorrow
+                patient.vaccinationDate =   date.format(tomorrow, 'YYYY/MM/DD');
                 patient.save(then=>{
                     return res.status(200).json({Date:tomorrow})
                 }).catch(err=>{

@@ -33,7 +33,10 @@ class Patient extends Component {
 
   render() {
     return (
-      <div className={styles.box}>
+      <div>
+      {this.props.vaccinated ? null :
+
+        <div className={styles.box}>
         <div>
           <div className={styles.name}>{this.props.name}</div>
           <div className={styles.age}>{this.props.age}</div>
@@ -83,6 +86,11 @@ class Patient extends Component {
           </button>
         </div>
       </div>
+      
+      }
+      </div>
+     
+      
     );
   }
 }
