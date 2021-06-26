@@ -63,7 +63,7 @@ class Public extends Component {
             <input
               className={styles.otp_input}
               onChange={this.otpChangeHandler}
-              type="text"
+              type="Password"
               placeholder="Enter OTP"
             ></input>
             <div

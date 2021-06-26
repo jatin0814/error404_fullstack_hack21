@@ -261,17 +261,22 @@ form {
 /* modal */
 
 .verify {
-  text-align: right;
+  text-align: center;
   position: relative;
-  left: 70%;
+  left: 0%;
 }
 
 .header {
-  width: 80%;
-  height: 70px;
-  background-color: #459df1;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  background-color: #0e589e;
   margin: auto;
-  border-radius: 8px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,7 +293,7 @@ form {
   font-size: 20px;
   font-weight: bold;
   margin: 10px auto;
-  color: #0084ff;
+  color: #0e589e;
 }
 
 .sent {
@@ -302,25 +307,42 @@ form {
 
 .otp_input {
   border: none;
-  border-bottom: 1px solid black;
+  border: 1px solid rgb(216, 215, 215);
   text-align: center;
-  margin: 40px auto;
+  margin: 40px auto 20px;
   font-size: 25px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 120%;
+  width: 90%;
 }
 
+.otp_input::placeholder {
+  font-size: 70%;
+  color: #a7a7a7;
+}
 .verify_button {
-  background-color: #459df1;
+  background-color: #0e589e;
   color: white;
-  width: max-content;
+  width: 90%;
   margin: auto;
-  font-size: 20px;
+  font-size: 18px;
   padding: 5px 20px;
   cursor: pointer;
   border-radius: 50px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 .verify_button:hover {
-  background-color: #0084ff;
+  background-color: #186bb9;
 }
 /*media Queries*/
 @media only screen and (min-width: 0px) {
@@ -579,5 +601,18 @@ form {
   }
 }
 
-@media only screen and (min-width: 1240px) {
+@media only screen and (max-height: 480px) {
+  .verify {
+    margin-top: 10vh;
+  }
+}
+@media only screen and (max-height: 440px) {
+  .verify {
+    margin-top: 5vh;
+  }
+}
+@media only screen and (max-height: 400px) {
+  .verify {
+    margin-top: 0vh;
+  }
 }
