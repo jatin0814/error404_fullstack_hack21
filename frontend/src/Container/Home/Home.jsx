@@ -13,8 +13,8 @@ import { BiHandicap } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
 import { FaUserCheck } from "react-icons/fa";
 // import LightSpeed from 'react-reveal/LightSpeed';
-import Bounce from 'react-reveal/Bounce';
-import Fade from 'react-reveal/Fade';
+import Bounce from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
 
 import date from 'date-and-time';
 
@@ -33,7 +33,6 @@ class Home extends Component {
   };
 
   componentDidMount() {
-
     var today = new Date();
 
     console.log(date.format(today, 'YYYY/MM/DD'))
@@ -48,7 +47,6 @@ class Home extends Component {
     const data = {
       phone: localStorage.getItem("phone"),
     };
-    
 
     axios
       .post("http://localhost:9000/user/members", data)
@@ -151,9 +149,9 @@ class Home extends Component {
     return (
       <div>
         {/* <LightSpeed left> */}
-          <div>
-            <Navbar />
-          </div>
+        <div>
+          <Navbar />
+        </div>
         {/* </LightSpeed> */}
 
         <AddMember show={this.state.modal} switch={this.modalSwitchhandler}>
@@ -193,8 +191,10 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.male}
               />
-              
-              <label for="male" className={styles.inputText}>male</label>
+
+              <label for="male" className={styles.inputText}>
+                male
+              </label>
               <br />
               <input
                 type="radio"
@@ -204,7 +204,9 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.female}
               />
-              <label for="female" className={styles.inputText}>female</label>
+              <label for="female" className={styles.inputText}>
+                female
+              </label>
               <br />
               <input
                 type="radio"
@@ -214,7 +216,9 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.other}
               />
-              <label for="other" className={styles.inputText}>other</label>
+              <label for="other" className={styles.inputText}>
+                other
+              </label>
               <br />
 
               <br />
@@ -244,7 +248,7 @@ class Home extends Component {
                 value="special"
                 onClick={this.special}
               />
-              <label for="special">  Specially abled</label>
+              <label for="special"> Specially abled</label>
             </div>
 
             <div className={styles.submit} onClick={this.onAddMemberhandler}>
@@ -254,11 +258,11 @@ class Home extends Component {
         </AddMember>
 
         <div className={styles.parallax}>
-        <Fade top>
-          <div className={styles.tag}>
-            Get your whole family vaccinated here{" "}
-            <div className={styles.tag2}># at home!</div>
-          </div>
+          <Fade top>
+            <div className={styles.tag}>
+              Get your whole family vaccinated here{" "}
+              <div className={styles.tag2}># at home!</div>
+            </div>
           </Fade>
           <div className={styles.btns}>
             <div
@@ -275,32 +279,31 @@ class Home extends Component {
               {/*<FiHelpCircle />*/}
             </div>
 
-        <Fade left>
-          <div>
-            <div className={styles.infor}>
-              <div className={styles.reg} className={styles.informa}>
-                <BiNotepad className={styles.icon2} />
-                225
-                <div>Users</div>
+            <Fade left>
+              <div>
+                <div className={styles.infor}>
+                  <div className={styles.reg} className={styles.informa}>
+                    <BiNotepad className={styles.icon2} />
+                    225
+                    <div>Users</div>
+                  </div>
+                  <div className={styles.dose1} className={styles.informa}>
+                    <BiPlusMedical className={styles.icon2} />
+                    105
+                    <div>Doses Given</div>
+                  </div>
+                  <div className={styles.fam} className={styles.informa}>
+                    <BiGroup className={styles.icon2} />
+                    25
+                    <div>Families</div>
+                  </div>
+                  <div className={styles.spcateg} className={styles.informa}>
+                    <BiHandicap className={styles.icon2} />
+                    12
+                    <div>Special</div>
+                  </div>
+                </div>
               </div>
-              <div className={styles.dose1} className={styles.informa}>
-                <BiPlusMedical className={styles.icon2} />
-                105
-                <div>Doses Given</div>
-              </div>
-              <div className={styles.fam} className={styles.informa}>
-                <BiGroup className={styles.icon2} />
-                25
-                <div>Families</div>
-              </div>
-              <div className={styles.spcateg} className={styles.informa}>
-                <BiHandicap className={styles.icon2} />
-                12
-                <div>Special</div>
-              </div>
-            </div>
-            
-            </div>
             </Fade>
           </div>
         </div>
@@ -338,41 +341,31 @@ class Home extends Component {
             One registration per person is sufficient. Please do not register
             with multiple mobile numbers or different Photo ID Proofs for same
             individual. <br />
+            <br />
             Scheduling of Second dose should be done from the same account (same
             mobile number) from which the first dose has been taken, for
             generation of final certificate. Separate registration for second
             dose is not necessary.
-            <br /> Please carry the registered mobile phone and the requisite
-            documents, including appointment slip, the Photo ID card used for
-            registration, Employment Certificate (HCW/FLW) etc., while visiting
-            the vaccination center, for verification at the time of vaccination.
-            <br /> Please check for additional eligibility conditions, if any,
+            <br /> <br />
+            Please check for additional eligibility conditions, if any,
             prescribed by the respective State/UT Government for vaccination at
-            Government Vaccination Centers, for 18-44 age group, and carry the
-            other prescribed documents (e.g. Comorbidity Certificate etc.) as
-            suggested by respective State/UT (on their website). <br />
-            The slots availability is displayed in the search (on district,
-            pincode or map) based on the schedule populated by the DIOs (for
-            Government Vaccination Centers) and private hospitals for their
-            vaccination centers.
+            Government Vaccination Centers.
+            <br />
             <br /> The vaccination schedule published by DIOs and private
             hospitals displays the list of vaccination centers with the
             following information The vaccine type. The age group (18-44/45+
             etc.).
+            <br />
             <br /> The number of slots available for dose 1 and dose 2. Whether
             the service is Free or Paid (Vaccination is free of cost at all the
             Government Vaccination Centers). <br />
-            Per dose price charged by a private hospital. If you are seeking 1st
-            dose vaccination, the system will show you only the available slots
-            for dose 1. <br />
+            <br />
             Similarly, if you are due for 2nd dose, the system will show you the
             available slots for dose 2 after the minimum period from the date of
             1st dose vaccination has elapsed. Once a session has been published
             by the DIO/ private hospital, the session now can not be
-            cancelled.However, the session may be rescheduled. <br /> In case
-            you have booked an appointment in any such vaccination session that
-            is rescheduled for any reason, your appointment will also be
-            automatically rescheduled accordingly. <br />
+            cancelled.However, the session may be rescheduled. <br />
+            <br />
             You will receive a confirmation SMS in this regard. On such
             rescheduling, you would still have the option of cancelling or
             further rescheduling such appointment.
