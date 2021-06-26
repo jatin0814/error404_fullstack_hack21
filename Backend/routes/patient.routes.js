@@ -5,7 +5,7 @@ const route = express.Router()
 
 
 route.post('/add-patient',patientController.addPatient)
-// route.get('/get-patients',patientController.getPatients)
+route.get('/get-patients',patientController.getPatients)
 route.post('/schedulePatient',patientController.schedulePatient)
 route.post('/get-patients',patientController.getPatients)
 route.post('/delete-patient', patientController.deletePatients)
