@@ -13,8 +13,8 @@ import { BiHandicap } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
 import { FaUserCheck } from "react-icons/fa";
 // import LightSpeed from 'react-reveal/LightSpeed';
-import Bounce from 'react-reveal/Bounce';
-import Fade from 'react-reveal/Fade';
+import Bounce from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
 
 class Home extends Component {
   state = {
@@ -140,9 +140,9 @@ class Home extends Component {
     return (
       <div>
         {/* <LightSpeed left> */}
-          <div>
-            <Navbar />
-          </div>
+        <div>
+          <Navbar />
+        </div>
         {/* </LightSpeed> */}
 
         <AddMember show={this.state.modal} switch={this.modalSwitchhandler}>
@@ -182,8 +182,10 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.male}
               />
-              
-              <label for="male" className={styles.inputText}>male</label>
+
+              <label for="male" className={styles.inputText}>
+                male
+              </label>
               <br />
               <input
                 type="radio"
@@ -193,7 +195,9 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.female}
               />
-              <label for="female" className={styles.inputText}>female</label>
+              <label for="female" className={styles.inputText}>
+                female
+              </label>
               <br />
               <input
                 type="radio"
@@ -203,7 +207,9 @@ class Home extends Component {
                 className={styles.radioBtn}
                 onClick={this.other}
               />
-              <label for="other" className={styles.inputText}>other</label>
+              <label for="other" className={styles.inputText}>
+                other
+              </label>
               <br />
 
               <br />
@@ -233,7 +239,7 @@ class Home extends Component {
                 value="special"
                 onClick={this.special}
               />
-              <label for="special">  Specially abled</label>
+              <label for="special"> Specially abled</label>
             </div>
 
             <div className={styles.submit} onClick={this.onAddMemberhandler}>
@@ -243,11 +249,11 @@ class Home extends Component {
         </AddMember>
 
         <div className={styles.parallax}>
-        <Fade top>
-          <div className={styles.tag}>
-            Get your whole family vaccinated here{" "}
-            <div className={styles.tag2}># at home!</div>
-          </div>
+          <Fade top>
+            <div className={styles.tag}>
+              Get your whole family vaccinated here{" "}
+              <div className={styles.tag2}># at home!</div>
+            </div>
           </Fade>
           <div className={styles.btns}>
             <div
@@ -264,32 +270,31 @@ class Home extends Component {
               {/*<FiHelpCircle />*/}
             </div>
 
-        <Fade left>
-          <div>
-            <div className={styles.infor}>
-              <div className={styles.reg} className={styles.informa}>
-                <BiNotepad className={styles.icon2} />
-                225
-                <div>Users</div>
+            <Fade left>
+              <div>
+                <div className={styles.infor}>
+                  <div className={styles.reg} className={styles.informa}>
+                    <BiNotepad className={styles.icon2} />
+                    225
+                    <div>Users</div>
+                  </div>
+                  <div className={styles.dose1} className={styles.informa}>
+                    <BiPlusMedical className={styles.icon2} />
+                    105
+                    <div>Doses Given</div>
+                  </div>
+                  <div className={styles.fam} className={styles.informa}>
+                    <BiGroup className={styles.icon2} />
+                    25
+                    <div>Families</div>
+                  </div>
+                  <div className={styles.spcateg} className={styles.informa}>
+                    <BiHandicap className={styles.icon2} />
+                    12
+                    <div>Special</div>
+                  </div>
+                </div>
               </div>
-              <div className={styles.dose1} className={styles.informa}>
-                <BiPlusMedical className={styles.icon2} />
-                105
-                <div>Doses Given</div>
-              </div>
-              <div className={styles.fam} className={styles.informa}>
-                <BiGroup className={styles.icon2} />
-                25
-                <div>Families</div>
-              </div>
-              <div className={styles.spcateg} className={styles.informa}>
-                <BiHandicap className={styles.icon2} />
-                12
-                <div>Special</div>
-              </div>
-            </div>
-            
-            </div>
             </Fade>
           </div>
         </div>
