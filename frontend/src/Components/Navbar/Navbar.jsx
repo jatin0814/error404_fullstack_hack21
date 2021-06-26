@@ -1,15 +1,25 @@
 import React, { Component } from "react";
-
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
-
 import Logo from "../../Images/logo.png";
+import {CgMenuRound} from "react-icons/cg";
+
 
 class Navbar extends Component {
+  
   render() {
     return (
-      <div>
+      <div>      
         <ul className={styles.main_nav}>
+        {/*  */}
+        <nav className={styles.hamNav}>
+          <CgMenuRound 
+          className={styles.hamburger}
+          size='40px'
+          color='white'
+          onClick={ () => console.log("Clicked on it!")}   />
+        </nav>
+        {/*  */}
           <li>
             <NavLink
               className={styles.log}

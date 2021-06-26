@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
+
+
 import styles from "./Home.module.css";
 import AddMember from "../../UI/Modal/Modal";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -267,13 +270,15 @@ class Home extends Component {
             >
               Add Member
             </div>
-            <div
-              className={styles.add_button3}
-              onClick={this.modalSwitchhandler}
-            >
-              Help
-              {/*<FiHelpCircle />*/}
-            </div>
+
+            <NavLink
+                className={styles.add_button3}
+                exact
+                to="/help"
+                activeClassName={styles.active}
+              >
+                Help
+              </NavLink>
 
             <Fade left>
               <div>
@@ -303,6 +308,11 @@ class Home extends Component {
             </Fade>
           </div>
         </div>
+
+        <div className={styles.members}>
+            You can register 4 members with one mobile number
+          </div>
+          
         {/*<Navbarb />*/}
         <div className={styles.mem}>
           <div className={styles.det}>Account Details</div>
@@ -326,10 +336,6 @@ class Home extends Component {
           </div>
         </div>
         <div className={styles.home_cont}>
-          <div className={styles.members}>
-            You can register 4 members with one mobile number
-          </div>
-
           
         </div>
         <Footer />
