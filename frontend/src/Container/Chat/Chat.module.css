@@ -1,79 +1,77 @@
-.chat{
-    display: flex;
-   
+.chat {
+  display: flex;
 }
 
-.side{
-    background-color: orange;
-    height: 90vh;
-    width: 225px;
-    /* position: fixed; */
-    /* left: 0px; */
-    overflow-y: auto
+.side {
+  background-color: #005cb3;
+  height: 100vh;
+  width: 270px;
+  /* position: fixed; */
+  /* left: 0px; */
+  overflow-y: auto;
 }
 
-.mssgs_cont{
-    /* background-color: red; */
-    height: 75vh;
-    position: absolute;
-    left: 225px;
-    right: 0px;
-    overflow: auto;
+.mssgs_cont {
+  /* background-color: red; */
+  height: 75vh;
+  position: absolute;
+  left: 225px;
+  right: 0px;
+  overflow: auto;
 }
 
-.room{
-    font-size: 30px;
-    color: rgb(68, 68, 68);
-    font-weight: bold;
-    padding: 20px 0px 20px 20px;
-    background-color: #FFF1D6;
+.room {
+  font-size: 30px;
+  color: rgb(68, 68, 68);
+  font-weight: bold;
+  padding: 20px 0px 20px 20px;
+  background-color: #fff1d6;
 }
 
-.users_cont{
-    color: rgb(243, 243, 243);
-    margin: 0px 0px 0px 21px;
+.users_cont {
+  color: rgb(243, 243, 243);
+  margin: 0px 0px 0px 21px;
 }
 
-.users_list{
-    margin: 30px 0px 10px 0px;
-    padding: 5px 0px 5px 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    border-right: 2px solid orange;
-   
+.users_list {
+  margin: 30px 0px 10px 0px;
+  padding: 5px 10px 5px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  border-right: 2px solid #005cb3;
 }
 
-.main_chat{
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    max-height: 100%;
+.main_chat {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
 }
 
-.chat_messages{
-    flex-grow: 1;
-    padding: 24px 24px 0 24px;
-    overflow-y: auto;
+.chat_messages {
+  flex-grow: 1;
+  padding: 24px 24px 0 24px;
+  overflow-y: auto;
 }
 
-.compose{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+.compose {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 
-.compose form{
-    display: flex;
-    flex-grow: 1;
-    margin-right: 16px;
-    width: 100%;
+.compose form {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 16px;
+  width: 100%;
 }
 
-.inpu{
-  background-color: #FFF1D6;
-  width: 100vh;
-  border: 1px solid orange;
+.inpu {
+  background-color: #fff1d6;
+  width: 50vw;
+  border: 1px solid #005cb3;
   padding: 3px 20px;
   margin: 0px 5px;
   border-radius: 50px;
@@ -81,50 +79,101 @@
   color: rgb(78, 78, 78);
 }
 
-.send{
-    background-color: orange;
-    border: none;
-    color: white;
-    border-radius: 50px;
-    padding: 10px 13px;
-    font-size: 20px;
-    margin-left: 5px;
-    cursor: pointer;
+.send {
+  background-color: #005cb3;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 13px;
+  font-size: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.send:hover {
+  background-color: #054581;
+}
+.loc {
+  border: none;
+  background-color: #005cb3;
+  color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  left: 0;
+  border-radius: 100px;
+}
+.loc2 {
+  border: none;
+  background-color: #dd2b2b;
+  color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 20px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+.loc:hover {
+  background-color: #054581;
 }
 
-.loc{
-    border: none;
-    background-color: orange;
-    color: white;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+.loc2:hover {
+  background-color: #c50707;
 }
 
-.mssg{
-    padding: 10px;
+.mssg {
+  padding: 10px;
 }
 
-.user{
-    color: orange;
-    font-weight: bold;
-    display: inline;
-    font-size: 15px;
+.user {
+  color: #005cb3;
+  font-weight: bold;
+  display: inline;
+  font-size: 15px;
 }
 
-.time{
-    display: inline;
-    margin-left: 10px;
-    font-size: 10px;
-    color: rgb(128, 128, 128);
+.time {
+  display: inline;
+  margin-left: 10px;
+  font-size: 10px;
+  color: rgb(128, 128, 128);
 }
 
-.txt{
-    color: rgb(124, 124, 124);
-    font-size: 16px;
+.txt {
+  color: rgb(124, 124, 124);
+  font-size: 16px;
 }
 
-.txt_loc{
-    display: block;
-    color: rgb(100, 65, 0);
+.txt_loc {
+  display: block;
+  color: rgb(100, 65, 0);
+}
+
+@media (max-width: 1220px) {
+  .inpu {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 1013px) {
+  .inpu {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 870px) {
+  .side {
+    height: 88vh;
+  }
+  .inpu {
+    z-index: 10;
+    width: 60vw;
+  }
+  .compose form {
+    flex-grow: 0;
+  }
 }
