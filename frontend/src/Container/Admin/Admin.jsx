@@ -4,10 +4,10 @@ import axios from "axios";
 import styles from "./Admin.module.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import Patient from "../Cards/Patient/Patient";
+import Patient from "../cards/Patient/Patient";
 import { BiPlusMedical } from "react-icons/bi";
 import { BiGroup } from "react-icons/bi";
-import { BiHandicap } from "react-icons/bi";
+import { BiHandicap } from "react-icons/bi";  
 import { BiNotepad } from "react-icons/bi";
 
 class Admin extends Component {
