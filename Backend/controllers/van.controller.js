@@ -2,7 +2,8 @@ const Van = require("../models/van.model")
 const jwt = require("jsonwebtoken")
 const Patient = require("../models/patient.model")
 var axios = require("axios").default;
-
+const dotenv = require("dotenv")
+dotenv.config();
 
 function timeConvert(n) {
     var num = n;
@@ -88,7 +89,7 @@ exports.getLiveTime = (req,res,next) => {
             },
             headers: {
                 'content-type': 'application/json',
-                'x-rapidapi-key': 'eca084dc7emshabfc11644902855p117df7jsn30163e604465',
+                'x-rapidapi-key': process.env.rapidapikey,
                 'x-rapidapi-host': 'distance-calculator.p.rapidapi.com'
             }
             };
