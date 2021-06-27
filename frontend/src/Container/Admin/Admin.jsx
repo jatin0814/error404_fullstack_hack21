@@ -10,10 +10,12 @@ import { BiPlusMedical } from "react-icons/bi";
 import { FaShuttleVan } from "react-icons/fa";
 import { BiHandicap } from "react-icons/bi";
 import { BiNotepad } from "react-icons/bi";
+import Spinner from '../../UI/Spinner/Spinner'
 
 class Admin extends Component {
   state = {
     patients: [],
+    loading: false
   };
 
   componentDidMount() {
@@ -26,14 +28,17 @@ class Admin extends Component {
     "date" : date.format(today, 'YYYY/MM/DD')
   }
 
-    axios
-      .post("https://mobivax-api.herokuapp.com/patient/patientOnDate" ,data)
+  this.setState({loading: true})
+
+    axios.post("https://mobivax-api.herokuapp.com/patient/patientOnDate" ,data)
       .then((res) => {
         this.setState({ patients: res.data.patients });
         console.log(this.date.patients);
+        this.setState({loading: false})
       })
       .catch((e) => {
         console.log(e);
+        this.setState({loading: false})
       });
   }
 
@@ -59,6 +64,9 @@ class Admin extends Component {
 
     return (
       <div className={styles.admincss}>
+
+      {this.state.loading ? <Spinner/> : null}
+
         <div className={styles.admincss1}>
           <div className={styles.tag}>
             Vaccinating the Nation!{" "}

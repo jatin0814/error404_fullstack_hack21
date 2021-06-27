@@ -13,6 +13,7 @@ class Admin extends Component {
     username: "",
     password: "",
     showpass: false,
+    loading: false
   };
 
   onUserChange = (event) => {

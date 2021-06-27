@@ -18,6 +18,7 @@ import { FaUserCheck } from "react-icons/fa";
 // import LightSpeed from 'react-reveal/LightSpeed';
 import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
+import Spinner from '../../UI/Spinner/Spinner'
 
 
 
@@ -33,9 +34,12 @@ class Home extends Component {
     lat: "",
     long: "",
     special: false,
+    loading: false
   };
 
   componentDidMount() {
+
+    this.setState({loading: true})
 
     navigator.geolocation.getCurrentPosition((position) => {
       this.setState({ lat: position.coords.latitude });
@@ -52,9 +56,11 @@ class Home extends Component {
         this.setState({ members: res.data });
         console.log("fetched");
         console.log(this.state.members);
+        this.setState({loading: false})
       })
       .catch((e) => {
         console.log(e);
+        this.setState({loading: false})
       });
   }
 
@@ -140,6 +146,8 @@ class Home extends Component {
             otp={member.otp}
             vaccinated={member.vaccinated}
             van={member.vanNumber}
+            coordinate={member.coordinate}
+            sheduled={member.sheduled}
           />
         ))}
       </div>
@@ -147,6 +155,8 @@ class Home extends Component {
 
     return (
       <div>
+         {this.state.loading ? <Spinner/> : null}
+        {/* <Spinner/> */}
         {/* <LightSpeed left> */}
         <div>
           <Navbar />

@@ -36,7 +36,7 @@ class Public extends Component {
   };
 
   render() {
-    const redirect = this.props.isAuth ? <Redirect to="/" /> : null;
+    const redirect = this.props.isAuth ? <Redirect to="/home" /> : null;
 
     return (
       <div className={styles.back}>
@@ -48,7 +48,7 @@ class Public extends Component {
 
         <Admin show={this.state.admin} switch={this.onSwitchLoginHandler} />
 
-        <Verify show={true}>
+        <Verify show={this.props.verify}>
           <div className={styles.verify}>
             <div className={styles.header}>
               <div className={styles.env}>
