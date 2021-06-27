@@ -12,13 +12,15 @@ const vanRoute = require("./routes/van.routes")
 const userRoute = require("./routes/user.routes")
 
 dotenv.config();
+
 const mongoDbUrl = process.env.MONGODBURL;
 const port = process.env.PORT || 9000;
 const app = express()
+app.use(cors())
 const server = http.createServer(app)
 const io = socketio(server, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: "*",
       methods: ["GET", "POST"],
       credentials: true
     }
@@ -27,7 +29,7 @@ const io = socketio(server, {
 // app.get('/',(req,res,next)=>{
 //     res.send("Hello")
 // })
-app.use(cors())
+
 app.use(express.json())
 app.use(express.urlencoded())
 
