@@ -49,6 +49,15 @@ const reducer = (state = initialState, action) => {
                 adminAuth: true
             }
 
+        case actionTypes.LOGOUT:
+            console.log('LOGOUT')
+            // localStorage.clear();
+            return    {
+                ...state,
+                auth: false,
+                adminAuth: false,
+            }
+
         default:
             return state;
     }

@@ -31,6 +31,14 @@ export const authFail = (error) => {
   };
 };
 
+export const logout = () => {
+  console.log('reached')
+  // localStorage.clear();
+  return{
+      type: actionTypes.LOGOUT
+  }
+}
+
 export const verifyStart = () => {
   return {
     type: actionTypes.VERIFY_START,

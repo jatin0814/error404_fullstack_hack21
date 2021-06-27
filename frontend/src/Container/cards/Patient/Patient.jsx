@@ -3,12 +3,16 @@ import axios from "axios";
 
 import styles from "./Patient.module.css";
 import { HiUserRemove } from "react-icons/hi";
+import Spinner from '../../../UI/Spinner/Spinner'
+
 class Patient extends Component {
   state = {
     vaccineType: "",
+    loading: false
   };
 
   onVaccinateHandler = (ev) => {
+    this.setState({loading: true})
     console.log(ev.target.id);
 
     const data = {
@@ -20,9 +24,13 @@ class Patient extends Component {
       .post("https://mobivax-api.herokuapp.com/patient/vaccinate", data)
       .then((res) => {
         console.log(res);
+        this.setState({loading: false})
+        window.location.reload(false);
       })
       .then((err) => {
         console.log(err);
+        this.setState({loading: false})
+        window.location.reload(false);
       });
   };
 
@@ -34,6 +42,7 @@ class Patient extends Component {
   render() {
     return (
       <div>
+        {this.state.loading ? <Spinner/> : null}
         {this.props.vaccinated ? null : (
           <div className={styles.box}>
             <div>

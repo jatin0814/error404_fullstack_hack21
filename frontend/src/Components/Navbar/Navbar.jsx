@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../Images/logo.png";
-import { CgMenuRound } from "react-icons/cg";
 import SideDrawer from "../Sidedrawer/SideDrawer";
+import { connect } from "react-redux";
+import * as actions from "../../Store/actions/auth";
 
 class Navbar extends Component {
   state = {
@@ -24,7 +25,7 @@ class Navbar extends Component {
             <NavLink
               className={styles.log}
               exact
-              to="/"
+              to={this.props.admin ? "/admin" : "/home"}
               activeClassName={styles.activel}
             >
               <img src={Logo} className={styles.logo}></img>
@@ -48,7 +49,7 @@ class Navbar extends Component {
               <NavLink
                 className={styles.tag}
                 exact
-                to="/"
+                to="/home"
                 activeClassName={styles.active}
               >
                 Home
@@ -104,7 +105,7 @@ class Navbar extends Component {
             <NavLink
               className={styles.tag}
               exact
-              to="/auth"
+              to="/"
               activeClassName={styles.active}
             >
               Logout
@@ -116,4 +117,10 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(actions.logout()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Navbar);
