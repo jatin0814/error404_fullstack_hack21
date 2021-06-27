@@ -180,7 +180,8 @@ exports.schedulePatient = (req,res,next) => {
                     van.save().then(result=>{
                         Patient.findById({_id:req.body["patientId"]}).then(patient=>{
                             patient.vaccinationDate =  date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0],
-                            patient.sheduled = true
+                            patient.sheduled = true,
+                            patient.otp = Math.floor(1000 + Math. random() * 9000).toString()
                             patient.save().then(result=>{
                                 return res.status(200).json({Date:date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0]})
                             })
@@ -199,7 +200,8 @@ exports.schedulePatient = (req,res,next) => {
                             console.log("patient")
                             console.log(van.Date)
                             patient.vaccinationDate =   date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0],
-                            patient.sheduled = true
+                            patient.sheduled = true,
+                            patient.otp = Math.floor(1000 + Math. random() * 9000).toString()
                             console.log(patient.vaccinationDate)
                             patient.save().then(result=>{
                                 return res.status(200).json({Date:date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0]})
@@ -221,7 +223,8 @@ exports.schedulePatient = (req,res,next) => {
                     van.save().then(result=>{
                     Patient.findById({_id:req.body["patientId"]}).then(patient=>{
                         patient.vaccinationDate =   date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0],
-                        patient.sheduled = true
+                        patient.sheduled = true,
+                        patient.otp = Math.floor(1000 + Math. random() * 9000).toString()
                         patient.save(then=>{
                             return res.status(200).json({Date:date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0]})
                         }).catch(err=>{
