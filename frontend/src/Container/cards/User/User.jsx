@@ -22,6 +22,8 @@ class Patient extends Component {
 
     console.log(this.state.lat)
     console.log(this.state.long)
+
+    
   }
 
   onDeleteHandler = (ev) => {
@@ -126,12 +128,16 @@ class Patient extends Component {
           <div>22 / 06 / 2021</div>
           {/* plis ad these */}
 
-          <button className={styles.buttons2}>Covishield</button>
+          {this.props.vaccinated ? 
+          <button className={styles.buttons2}>{this.props.vaccineName}</button> : null}
+          
         </div>
         <div className={styles.flexp3}>
-          <div className={styles.sch}>Dose {this.props.dose}</div>
+          <div className={styles.sch}>Dose number {this.props.vaccinated  ? 2 : 1}</div>
+          {this.props.vaccinated ? <div className={styles.sch}>Vaccinate on {this.props.date}</div> : null}
+          
           {this.props.sheduled ? 
-          <button className={styles.buttons}  key={this.props.id} id={this.props.id} >Scheduled</button> :
+          <div className={styles.buttons_scheduled}  key={this.props.id} id={this.props.id} >Scheduled</div> :
           <button className={styles.buttons}  key={this.props.id} id={this.props.id} onClick={this.onScheduleHandler}>Schedule</button>}
           
         </div>

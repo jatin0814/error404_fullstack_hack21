@@ -148,6 +148,8 @@ class Home extends Component {
             van={member.vanNumber}
             coordinate={member.coordinate}
             sheduled={member.sheduled}
+            vaccineName={member.vaccineName}
+            date={member.vaccinationDate}
           />
         ))}
       </div>
