@@ -2,30 +2,26 @@ import React, { Component } from "react";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../Images/logo.png";
-import {CgMenuRound} from "react-icons/cg";
-import SideDrawer from "../SideDrawer/SideDrawer";
+import SideDrawer from "../Sidedrawer/SideDrawer";
 import { connect } from "react-redux";
-
 import * as actions from "../../Store/actions/auth";
 
 class Navbar extends Component {
-
   state = {
-    drawer: false
-  }
+    drawer: false,
+  };
 
   onDrawerChange = () => {
-    this.setState({drawer : !this.state.drawer})
-    console.log(this.state.drawer)
-  }
-  
+    this.setState({ drawer: !this.state.drawer });
+    console.log(this.state.drawer);
+  };
+
   render() {
     return (
-      <div>      
-        <SideDrawer />       
-        <ul className={styles.main_nav}>  
-        
-         <li>
+      <div>
+        <SideDrawer />
+        <ul className={styles.main_nav}>
+          <li>
             <NavLink
               className={styles.log}
               exact
@@ -105,7 +101,7 @@ class Navbar extends Component {
             )}
           </li>
 
-          <li className={`${styles.link} ${styles.push}`} >
+          <li className={`${styles.link} ${styles.push}`}>
             <NavLink
               className={styles.tag}
               exact
@@ -121,10 +117,10 @@ class Navbar extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-      logout: () => dispatch(actions.logout())
-  }
-}
+    logout: () => dispatch(actions.logout()),
+  };
+};
 
 export default connect(null, mapDispatchToProps)(Navbar);

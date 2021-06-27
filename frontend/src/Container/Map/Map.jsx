@@ -14,8 +14,7 @@ class Map extends Component {
   };
 
   componentDidMount() {
-
-    let location = [0,0]
+    let location = [0, 0];
 
     var today = new Date();
 
@@ -25,29 +24,29 @@ class Map extends Component {
       date: date.format(today, "YYYY/MM/DD"),
     };
 
-    axios.post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
+    axios
+      .post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
       .then((res) => {
         // this.setState({
         //   location: res.data.patients[0].coordinate.reverse(),
         // });
         console.log(res.data.patients[0].coordinate.reverse());
-       location = res.data.patients[0].coordinate.reverse()
-        console.log(location)
+        location = res.data.patients[0].coordinate.reverse();
+        console.log(location);
       })
       .catch((e) => {
         console.log(e);
       });
 
     mapboxgl.accessToken =
-    "pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg";
+      "pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg";
 
-  const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/streets-v11",
-    center: [78.962883, 20.593683],
-    zoom: 13,
-  });
-   
+    const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [78.962883, 20.593683],
+      zoom: 13,
+    });
 
     map.on("load", function () {
       var directions = new MapboxDirections({
@@ -56,15 +55,14 @@ class Map extends Component {
       });
       map.addControl(directions, "top-left");
       directions.setOrigin([76.337524, 26.893192]);
-      directions.setDestination([77.185024,28.629401599999998 ]);
+      directions.setDestination([77.185024, 28.629401599999998]);
       const nav = new mapboxgl.NavigationControl();
       map.addControl(nav);
     });
   }
 
-  onGetDirection () {
-
-    let location = [0,0]
+  onGetDirection() {
+    let location = [0, 0];
 
     var today = new Date();
 
@@ -74,23 +72,23 @@ class Map extends Component {
       date: date.format(today, "YYYY/MM/DD"),
     };
 
-    axios.post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
+    axios
+      .post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
       .then((res) => {
         // this.setState({
         //   location: res.data.patients[0].coordinate.reverse(),
         // });
         console.log(res.data.patients[0].coordinate.reverse());
-       location = res.data.patients[0].coordinate.reverse()
-        console.log(location)
+        location = res.data.patients[0].coordinate.reverse();
+        console.log(location);
       })
       .catch((e) => {
         console.log(e);
       });
 
-
-      mapboxgl.accessToken =
+    mapboxgl.accessToken =
       "pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg";
-  
+
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v11",
@@ -98,18 +96,17 @@ class Map extends Component {
       zoom: 13,
     });
 
-
-      map.on("load", function () {
-        var directions = new MapboxDirections({
-          accessToken: mapboxgl.accessToken,
-          profile: "mapbox/driving",
-        });
-        map.addControl(directions, "top-left");
-        directions.setOrigin([76.337524, 26.893192]);
-        directions.setDestination(28.629401599999998, 77.185024);
-        const nav = new mapboxgl.NavigationControl();
-        map.addControl(nav);
+    map.on("load", function () {
+      var directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+        profile: "mapbox/driving",
       });
+      map.addControl(directions, "top-left");
+      directions.setOrigin([76.337524, 26.893192]);
+      directions.setDestination(28.629401599999998, 77.185024);
+      const nav = new mapboxgl.NavigationControl();
+      map.addControl(nav);
+    });
   }
 
   render() {
