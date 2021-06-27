@@ -10,11 +10,7 @@ var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 class Map extends Component {
   state = {
-<<<<<<< HEAD
     location: [],
-=======
-    coordinates: [0, 0],
->>>>>>> f8e9f9d9c7d8632a90db9a6e1f836e6020971f4f
   };
 
   componentDidMount() {
