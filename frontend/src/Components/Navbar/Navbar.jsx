@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../Images/logo.png";
-import SideDrawer from "../Sidedrawer/SideDrawer";
+import SideDrawer from "../SideDrawer/SideDrawer";
 import { connect } from "react-redux";
 import * as actions from "../../Store/actions/auth";
 
