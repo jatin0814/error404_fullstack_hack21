@@ -10,11 +10,7 @@ var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 class Map extends Component {
   state = {
-<<<<<<< HEAD
-    location: []
-=======
     coordinates: [0, 0],
->>>>>>> d9d587f9502f51857b0fe1b9e8e2393e53f545bf
   };
 
   componentDidMount() {
@@ -28,19 +24,6 @@ class Map extends Component {
     const data = {
       date: date.format(today, "YYYY/MM/DD"),
     };
-<<<<<<< HEAD
-=======
-
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg";
-
-    const map = new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [78.962883, 20.593683],
-      zoom: 13,
-    });
->>>>>>> d9d587f9502f51857b0fe1b9e8e2393e53f545bf
 
     axios.post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
       .then((res) => {

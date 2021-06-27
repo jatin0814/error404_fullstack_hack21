@@ -42,7 +42,7 @@ exports.addPatient = (req,res,next) => {
             params: cord,
             headers: {
               'content-type': 'application/json',
-              'x-rapidapi-key': 'eca084dc7emshabfc11644902855p117df7jsn30163e604465',
+              'x-rapidapi-key': process.env.rapidapikey,
               'x-rapidapi-host': 'distance-calculator.p.rapidapi.com'
             }
           };
@@ -67,6 +67,7 @@ exports.addPatient = (req,res,next) => {
               smallestElementCordArray.push(parseFloat(a),parseFloat(b))
               console.log("smallestElement",smallestElement)
               console.log("smallestElementCordArray",smallestElementCordArray)
+              req.body.phone = "+91"+req.body.phone
               Van.findOne({coordinate:smallestElementCordArray}).then(closestVan=>{
                 //   console.log(closestVan)
                     const patient = new Patient({
@@ -95,7 +96,7 @@ exports.addPatient = (req,res,next) => {
 
 
 exports.getPatients = (req,res,next) => {
-    const phone = req.body["phone"];
+    const phone = "+91"+req.body["phone"];
     // console.log(userId)
     Patient.find({phone:phone}).then(result=>{
         return res.status(200).send({patients:result})
@@ -138,32 +139,37 @@ exports.vaccinate = async (req, res) => {
 }
 
 exports.schedulePatient = (req,res,next) => {
+    console.log("req.body")
     const vanNumber = req.body.vanNumber;
-    const phoneNumber = req.body.phoneNumber;
+    const phoneNumber = "+91"+req.body.phoneNumber;
     let TDate = new Date()
     Van.findOne({number:vanNumber}).then(van=>{
+        console.log(van)
         Patient.find({phone:phoneNumber}).then(patients=>{
                 let filterPatient = patients.filter(patient => {
                     return patient.vaccinationDate !== null;
                 })
-                if(filterPatient.length>0){
-                    van.count = van.count + 1;
-                    van.save().then(result=>{
-                        Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                            patient.vaccinationDate =  filterPatient[0].vaccinationDate
-                            patient.save().then(result=>{
-                                return res.status(200).json({Date:filterPatient[0].vaccinationDate})
-                            })
-                        })
-                    }).catch(err=>{
-                        console.log(err)
-                        return res.status(400).json({"message":"someting went wrong!!"})
-                    })
-                }
+                // if(filterPatient.length>0){
+                //     console.log("1st if")
+                //     van.count = van.count + 1;
+                //     van.save().then(result=>{
+                //         Patient.findById({_id:req.body["patientId"]}).then(patient=>{
+                //             patient.vaccinationDate =  filterPatient[0].vaccinationDate
+                //             patient.save().then(result=>{
+                //                 return res.status(200).json({Date:filterPatient[0].vaccinationDate})
+                //             })
+                //         })
+                //     }).catch(err=>{
+                //         console.log(err)
+                //         return res.status(400).json({"message":"someting went wrong!!"})
+                //     })
+                // }
+                let today = new Date();
                 const vanDate = van.Date;
                 const todayData = new Date(vanDate);
                 if(vanDate.getTime() < todayData.getTime()){
-                    let today = new Date();
+                    cosnole.log("sdagsfg")
+                   
                     var tomorrow = new Date();
                     tomorrow.setDate(today.getDate() + 1)
                     van.Date = today
@@ -173,9 +179,10 @@ exports.schedulePatient = (req,res,next) => {
                     van.count = van.count + 1;
                     van.save().then(result=>{
                         Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                            patient.vaccinationDate =  date.format(tomorrow, 'YYYY/MM/DD');
+                            patient.vaccinationDate =  date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0],
+                            patient.sheduled = true
                             patient.save().then(result=>{
-                                return res.status(200).json({Date:date.format(tomorrow, 'YYYY/MM/DD')})
+                                return res.status(200).json({Date:date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0]})
                             })
                         })
                     }).catch(err=>{
@@ -185,12 +192,17 @@ exports.schedulePatient = (req,res,next) => {
                   }
                   
                   else if(vanDate.getTime() === todayData.getTime() && van.count<10){
+                      console.log("else if")
                     van.count = van.count + 1;
                     van.save().then(result=>{
                         Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                            patient.vaccinationDate =   date.format(van.Date, 'YYYY/MM/DD');
+                            console.log("patient")
+                            console.log(van.Date)
+                            patient.vaccinationDate =   date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0],
+                            patient.sheduled = true
+                            console.log(patient.vaccinationDate)
                             patient.save().then(result=>{
-                                return res.status(200).json({Date:date.format(van.Date, 'YYYY/MM/DD')})
+                                return res.status(200).json({Date:date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0]})
                             })
                         })
                     }).catch(err=>{
@@ -208,9 +220,10 @@ exports.schedulePatient = (req,res,next) => {
                     van.Date = tomorrow
                     van.save().then(result=>{
                     Patient.findById({_id:req.body["patientId"]}).then(patient=>{
-                        patient.vaccinationDate =   date.format(tomorrow, 'YYYY/MM/DD');
+                        patient.vaccinationDate =   date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0],
+                        patient.sheduled = true
                         patient.save(then=>{
-                            return res.status(200).json({Date:date.format(tomorrow, 'YYYY/MM/DD')})
+                            return res.status(200).json({Date:date.format(today, 'YYYY/MM/DD [GMT]Z').split(" ")[0]})
                         }).catch(err=>{
                             return res.status(400).json({message:"Something Went Wrong!!"})
                         })
@@ -219,6 +232,8 @@ exports.schedulePatient = (req,res,next) => {
                     })
                   }
         })
+    }).catch(err=>{
+        return res.status(400).json({message:"Something Went Wrong!!"})
     })
 }
 
