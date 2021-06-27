@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import styles from "./Chat.module.css";
 // import Header from '../../components/Header/Header'
 import socket from "../../Components/socket";
-
+import Navbar from "../../Components/Navbar/Navbar2";
 class Chat extends Component {
   state = {
     mssg: "",
@@ -160,6 +160,7 @@ class Chat extends Component {
 
     return (
       <div>
+        <Navbar />
         <div className={styles.chat}>
           <div className={styles.side}>
             <div className={styles.room}>{this.state.room}</div>

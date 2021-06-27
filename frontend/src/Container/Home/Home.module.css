@@ -246,6 +246,7 @@ body {
 
 .addMem {
   text-align: center;
+  height: 70vh;
 }
 
 .inst {
@@ -255,7 +256,6 @@ body {
   font-size: 25px;
   /* font-weight: bold; */
   border-radius: 5px;
-
   letter-spacing: 2px;
 }
 
@@ -271,12 +271,12 @@ body {
 }
 
 .inputs {
-  padding-top: 40px;
+  padding-top: 20px;
   text-align: left;
 }
 
 .input {
-  margin: 20px 10px;
+  margin: 10px 10px;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -289,11 +289,11 @@ body {
 .submit {
   background-color: #459df1;
   padding: 10px;
-  width: max-content;
-  /* margin-left: auto; */
-  margin: 0 auto;
-  margin-top: 17px;
-  color: white;
+  width: 90%;
+
+  margin: 0px auto;
+  margin-top: 15px;
+  color: rgb(255, 255, 255);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.25s ease-in;
@@ -314,10 +314,9 @@ body {
 }
 
 .radioBtn {
-  margin: 15px 10px;
+  margin: 10px 10px;
   /* padding: 10px; */
   cursor: pointer;
-
   height: 20px;
   width: 20px;
   background-color: #eee;

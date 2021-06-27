@@ -18,7 +18,7 @@
   position: absolute;
   top: 60px;
   left: 350px;
-  z-index: 100;
+  z-index: 1;
   min-width: 140px;
   padding: 5px 20px;
   background-color: #0e589e;
@@ -35,7 +35,7 @@
   position: absolute;
   top: 20px;
   left: 350px;
-  z-index: 100;
+  z-index: 1;
   min-width: 140px;
   padding: 5px 20px;
   background-color: #0e589e;

@@ -89,7 +89,7 @@
     flex: 50%;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 557px) {
   .last,
   .last2 {
     font-size: 100%;
