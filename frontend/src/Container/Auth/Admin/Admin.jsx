@@ -48,6 +48,29 @@ class Admin extends Component {
     {redirect}
 
         <Modal show={this.props.show} switch={this.props.switch}>
+
+          <div className={styles.creds}>
+            default creds
+           
+          </div>
+
+          <div className={styles.creds_cont}>
+          <div className={styles.creds}>
+             username: admin1
+            password: Password1
+          </div>
+          <div className={styles.creds}>
+             username: admin2
+            password: Password2
+          </div>
+          <div className={styles.creds}>
+             username: admin3
+            password: Password3
+          </div>
+          </div>
+
+         
+
           <div className={styles.cont}>
             <div className={styles.header}>
               <div className={styles.doc}>

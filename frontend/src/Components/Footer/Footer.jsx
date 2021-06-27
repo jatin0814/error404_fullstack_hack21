@@ -89,7 +89,7 @@ const Footer = () => (
       </ul>
     </div>
     <div className={styles.last}>@ ErrOr 4O4</div>
-    <div className={styles.last2}>Saving Lives Through Coding........</div>
+    <div className={styles.last2}>MobiVax ©2021</div>
   </div>
 );
 

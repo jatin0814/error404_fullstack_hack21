@@ -137,7 +137,7 @@ class Patient extends Component {
           {this.props.vaccinated ? <div className={styles.sch}>Vaccinate on {this.props.date}</div> : null}
           
           {this.props.sheduled ? 
-          <div className={styles.buttons_scheduled}  key={this.props.id} id={this.props.id} >Scheduled</div> :
+          <div className={styles.vaccinated}  key={this.props.id} id={this.props.id} >Scheduled</div> :
           <button className={styles.buttons}  key={this.props.id} id={this.props.id} onClick={this.onScheduleHandler}>Schedule</button>}
           
         </div>

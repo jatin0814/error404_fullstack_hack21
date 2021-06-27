@@ -160,3 +160,13 @@ input:focus {
     height: 350px;
   }
 }
+
+.creds{
+  text-align: center;
+ 
+}
+
+.creds_cont{
+  border: 1px solid rgb(97, 97, 97);
+  color: rgb(65, 65, 65);
+}
