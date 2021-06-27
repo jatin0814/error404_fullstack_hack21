@@ -130,6 +130,16 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.buttons_scheduled {
+  position: unset;
+  font-size: 100%;
+ 
+  color: #414141;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .buttons2 {
   position: unset;
   font-size: 100%;

@@ -6,54 +6,15 @@ import date from "date-and-time";
 import styles from "./Map.module.css";
 import Navbar from "../../Components/Navbar/Navbar2";
 import Footer from "../../Components/Footer/Footer";
-var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
+// var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
+import mapboxgl from 'mapbox-gl';
 
 class Map extends Component {
   state = {
-<<<<<<< HEAD
-    location: []
-=======
     coordinates: [0, 0],
->>>>>>> d9d587f9502f51857b0fe1b9e8e2393e53f545bf
   };
 
   componentDidMount() {
-
-    let location = [0,0]
-
-    var today = new Date();
-
-    console.log(date.format(today, "YYYY/MM/DD"));
-
-    const data = {
-      date: date.format(today, "YYYY/MM/DD"),
-    };
-<<<<<<< HEAD
-=======
-
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg";
-
-    const map = new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [78.962883, 20.593683],
-      zoom: 13,
-    });
->>>>>>> d9d587f9502f51857b0fe1b9e8e2393e53f545bf
-
-    axios.post("https://mobivax-api.herokuapp.com/patient/patientOnDate", data)
-      .then((res) => {
-        // this.setState({
-        //   location: res.data.patients[0].coordinate.reverse(),
-        // });
-        console.log(res.data.patients[0].coordinate.reverse());
-       location = res.data.patients[0].coordinate.reverse()
-        console.log(location)
-      })
-      .catch((e) => {
-        console.log(e);
-      });
 
     mapboxgl.accessToken =
     "pk.eyJ1IjoiamF0aW4wMjE0IiwiYSI6ImNrcWFuYXNkajBidDUyb3FzZXR3OTk5NTIifQ._jaXQLhuZomlQ03PznJeJg";
